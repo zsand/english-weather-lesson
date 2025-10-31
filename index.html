@@ -3,458 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit 1: Weather - Complete Interactive Lesson</title>
+    <title>Interactive English Lessons - Pre-Intermediate</title>
+    <link rel="stylesheet" href="lesson.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #4A90E2;
-            --secondary-color: #50C878;
-            --accent-color: #FF6B6B;
-            --dark-bg: #1a1a2e;
-            --light-bg: #f8f9fa;
-            --text-dark: #2c3e50;
-            --text-light: #ecf0f1;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--light-bg);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        header {
-            background: var(--gradient-bg);
-            color: white;
-            padding: 2rem 0;
+        .main-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero {
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            color: white;
+            margin-bottom: 3rem;
             animation: fadeInDown 0.8s ease;
         }
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-style: italic;
-        }
-
-        .progress-container {
-            background: rgba(255, 255, 255, 0.2);
-            height: 8px;
-            margin-top: 1rem;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: var(--secondary-color);
-            width: 0%;
-            transition: width 0.5s ease;
-            box-shadow: 0 0 10px var(--secondary-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .nav-pills {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 2rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .nav-pill {
-            padding: 0.8rem 1.5rem;
-            background: var(--light-bg);
-            border: 2px solid transparent;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .nav-pill:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .nav-pill.active {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        .section {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            margin: 1.5rem 0;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h2 {
-            color: var(--primary-color);
+        .hero h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        .card h3 {
-            color: var(--secondary-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.5rem;
-        }
-
-        .quiz-container {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-        }
-
-        .quiz-question {
-            background: white;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .quiz-question h4 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .quiz-option {
-            padding: 1rem;
-            background: var(--light-bg);
-            border: 2px solid transparent;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .quiz-option:hover {
-            background: #e8f4f8;
-            border-color: var(--primary-color);
-        }
-
-        .quiz-option.selected {
-            background: #d4edff;
-            border-color: var(--primary-color);
-        }
-
-        .quiz-option.correct {
-            background: #d4edda;
-            border-color: var(--secondary-color);
-        }
-
-        .quiz-option.incorrect {
-            background: #f8d7da;
-            border-color: var(--accent-color);
-        }
-
-        .quiz-option input[type="radio"],
-        .quiz-option input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        .check-btn, .next-btn, .prev-btn, .submit-btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 1rem 0.5rem;
-        }
-
-        .check-btn, .submit-btn {
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        .check-btn:hover, .submit-btn:hover {
-            background: #45b369;
-            transform: scale(1.05);
-        }
-
-        .next-btn {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .next-btn:hover {
-            background: #3a7bc8;
-            transform: scale(1.05);
-        }
-
-        .prev-btn {
-            background: #6c757d;
-            color: white;
-        }
-
-        .prev-btn:hover {
-            background: #5a6268;
-            transform: scale(1.05);
-        }
-
-        .score-display {
-            background: var(--gradient-bg);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 1.2rem;
-            margin: 1rem 0;
-            display: none;
-        }
-
-        .score-display.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        th {
-            background: var(--primary-color);
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:hover {
-            background: #f8f9fa;
-        }
-
-        .vocab-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .vocab-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid var(--secondary-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .vocab-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .vocab-card h4 {
-            color: var(--primary-color);
+        .hero p {
             font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            opacity: 0.85;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .lesson-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .lesson-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .lesson-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .lesson-card h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
-        .vocab-card .type {
-            color: #666;
+        .lesson-card .unit-number {
+            color: var(--secondary-color);
             font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
-        .vocab-card .meaning {
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        .fill-blank {
-            display: inline-block;
-            min-width: 150px;
-            padding: 0.3rem 0.8rem;
-            margin: 0 0.5rem;
-            border: none;
-            border-bottom: 2px solid var(--primary-color);
-            background: transparent;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .fill-blank:focus {
-            outline: none;
-            background: #f0f8ff;
-            border-bottom-color: var(--secondary-color);
-        }
-
-        .fill-blank.correct {
-            border-bottom-color: var(--secondary-color);
-            background: #d4edda;
-        }
-
-        .fill-blank.incorrect {
-            border-bottom-color: var(--accent-color);
-            background: #f8d7da;
-        }
-
-        .info-box {
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid;
-        }
-
-        .info-box.tip {
-            background: #e7f3ff;
-            border-color: var(--primary-color);
-        }
-
-        .info-box.warning {
-            background: #fff3cd;
-            border-color: #ffc107;
-        }
-
-        .info-box.success {
-            background: #d4edda;
-            border-color: var(--secondary-color);
-        }
-
-        .reading-text {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            line-height: 1.8;
-            margin: 1rem 0;
-        }
-
-        .reading-text p {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 1rem;
         }
 
-        textarea {
-            width: 100%;
-            min-height: 150px;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            resize: vertical;
+        .lesson-card p {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .image-grid {
+        .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
         }
 
-        .image-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .stat-item {
+            background: var(--light-bg);
+            padding: 0.8rem;
+            border-radius: 8px;
             text-align: center;
         }
 
-        .image-placeholder {
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .start-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .start-btn:hover {
+            background: #45b369;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(80, 200, 120, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-stat {
+            text-align: center;
+        }
+
+        .footer-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
 
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -462,1309 +238,146 @@
             }
         }
 
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
-            gap: 1rem;
-        }
-
-        .emoji {
-            font-size: 1.5em;
-        }
-
-        .speaker-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            margin-left: 8px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 16px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .speaker-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.5);
-        }
-
-        .speaker-btn:active {
-            transform: scale(0.95);
-        }
-
-        .speaker-btn.playing {
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
-        }
-
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .nav-pills {
-                flex-direction: column;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .vocab-grid {
+            .lessons-grid {
                 grid-template-columns: 1fr;
             }
 
-            .nav-buttons {
-                flex-direction: column;
+            .footer-stats {
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>🌤️ Unit 1: Weather - Complete Edition</h1>
-        <p>"Climate is what we expect, weather is what we get." - Mark Twain</p>
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-    </header>
-
-    <div class="container">
-        <!-- Navigation Pills -->
-        <div class="nav-pills" id="navPills">
-            <div class="nav-pill active" data-section="intro">📋 Overview</div>
-            <div class="nav-pill" data-section="extremes">🌪️ Extremes</div>
-            <div class="nav-pill" data-section="winter">❄️ Winter</div>
-            <div class="nav-pill" data-section="scenario">🏔️ Scenario</div>
-            <div class="nav-pill" data-section="study">📚 Study Skills</div>
-            <div class="nav-pill" data-section="grammar">📖 Grammar</div>
-            <div class="nav-pill" data-section="vocabulary">📝 Vocabulary</div>
-            <div class="nav-pill" data-section="quiz">✅ Final Quiz</div>
+    <div class="main-container">
+        <div class="hero">
+            <h1>📚 Interactive English Lessons</h1>
+            <p>Transform your English learning with interactive exercises, instant feedback, and audio pronunciation</p>
+            <p class="subtitle">Pre-Intermediate Level (A2-B1 CEFR)</p>
         </div>
 
-        <!-- Section 1: Introduction -->
-        <div class="section active" id="intro">
-            <div class="card">
-                <h2><span class="emoji">🎯</span> Learning Objectives</h2>
-                <p>By the end of this unit, you will be able to:</p>
-                <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
-                    <li>✅ Describe different types of weather</li>
-                    <li>✅ Use Present Simple and Present Continuous correctly</li>
-                    <li>✅ Form questions in present tenses</li>
-                    <li>✅ Use modifiers (very, really, quite, extremely)</li>
-                    <li>✅ Agree and disagree in English</li>
-                    <li>✅ Write a guidebook entry</li>
-                </ul>
-            </div>
+        <div class="lessons-grid">
+            <!-- Unit 01: Weather -->
+            <div class="lesson-card" onclick="window.location.href='weather_lesson_complete.html'">
+                <div class="lesson-icon">🌤️</div>
+                <div class="unit-number">Unit 01</div>
+                <h2>Weather</h2>
+                <p>Master weather vocabulary, present tenses, and question formation through engaging exercises and real reading materials.</p>
 
-            <div class="card">
-                <h2><span class="emoji">🗂️</span> Topics Covered</h2>
-                <div class="vocab-grid">
-                    <div class="vocab-card">
-                        <h4>Grammar</h4>
-                        <p>Present Simple & Present Continuous, Question formation</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Sections</div>
                     </div>
-                    <div class="vocab-card">
-                        <h4>Vocabulary</h4>
-                        <p>Weather, Modifiers, Adventure activities</p>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Questions</div>
                     </div>
-                    <div class="vocab-card">
-                        <h4>Skills</h4>
-                        <p>Dictionary skills, Guidebook writing</p>
+                    <div class="stat-item">
+                        <div class="stat-number">74</div>
+                        <div class="stat-label">Audio Files</div>
                     </div>
-                    <div class="vocab-card">
-                        <h4>Pronunciation</h4>
-                        <p>Intonation for agreeing/disagreeing</p>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Exercises</div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Section 2: Extremes (COMPLETE) -->
-        <div class="section" id="extremes">
-            <div class="card">
-                <h2><span class="emoji">🌪️</span> Section 1.1: Extremes</h2>
-
-                <h3>Vocabulary: Weather Types</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Word</th>
-                            <th>Definition</th>
-                            <th>Example</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>blizzard</strong> <button class="speaker-btn" onclick="playAudio('weather_words_blizzard')">🔊</button></td>
-                            <td>Heavy snowstorm with strong winds <button class="speaker-btn" onclick="playAudio('weather_definitions_blizzard')">🔊</button></td>
-                            <td>"Following yesterday's blizzards..." <button class="speaker-btn" onclick="playAudio('weather_examples_blizzard')">🔊</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>drought</strong> <button class="speaker-btn" onclick="playAudio('weather_words_drought')">🔊</button></td>
-                            <td>Long period with no rain <button class="speaker-btn" onclick="playAudio('weather_definitions_drought')">🔊</button></td>
-                            <td>"...experiencing a serious drought" <button class="speaker-btn" onclick="playAudio('weather_examples_drought')">🔊</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>hurricane</strong> <button class="speaker-btn" onclick="playAudio('weather_words_hurricane')">🔊</button></td>
-                            <td>Extremely strong tropical storm <button class="speaker-btn" onclick="playAudio('weather_definitions_hurricane')">🔊</button></td>
-                            <td>"Hurricane Katrina hit the US coast" <button class="speaker-btn" onclick="playAudio('weather_examples_hurricane')">🔊</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>storm</strong> <button class="speaker-btn" onclick="playAudio('weather_words_storm')">🔊</button></td>
-                            <td>Bad weather with strong wind and rain <button class="speaker-btn" onclick="playAudio('weather_definitions_storm')">🔊</button></td>
-                            <td>"There are heavy storms in the UK" <button class="speaker-btn" onclick="playAudio('weather_examples_storm')">🔊</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card">
-                <h3><span class="emoji">✏️</span> Exercise 4a: Identify Tenses</h3>
-                <p>Which of these sentences are in the Present Simple (PS)? Which are in the Present Continuous (PC)?</p>
-                <div class="quiz-container">
-                    <div class="quiz-question">
-                        <h4>1. At the moment, I'm covering the windows with wood.</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="tense1" value="ps">
-                                Present Simple
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="tense1" value="pc">
-                                Present Continuous
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>2. We always help everyone.</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="tense2" value="ps">
-                                Present Simple
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="tense2" value="pc">
-                                Present Continuous
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>3. The number of strong hurricanes is increasing.</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="tense3" value="ps">
-                                Present Simple
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="tense3" value="pc">
-                                Present Continuous
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>4. Warm seas cause hurricanes.</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="tense4" value="ps">
-                                Present Simple
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="tense4" value="pc">
-                                Present Continuous
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="check-btn" onclick="checkTenseIdentification()">Check Answers</button>
-                    <div class="score-display" id="tenseScore"></div>
+                <div class="tags">
+                    <span class="tag">Present Simple</span>
+                    <span class="tag">Present Continuous</span>
+                    <span class="tag">Weather Vocab</span>
                 </div>
+
+                <a href="weather_lesson_complete.html" class="start-btn">Start Learning →</a>
             </div>
 
-            <div class="card">
-                <h3><span class="emoji">📝</span> Exercise 6: Complete "Storms hit the UK" News Report</h3>
-                <div class="quiz-container">
-                    <div class="info-box warning">
-                        <strong>Instructions:</strong> Use the Present Simple or Present Continuous of the verbs.
+            <!-- Unit 02: People -->
+            <div class="lesson-card" onclick="window.location.href='people_lesson.html'">
+                <div class="lesson-icon">👥</div>
+                <div class="unit-number">Unit 02</div>
+                <h2>People</h2>
+                <p>Explore past tenses, personality descriptions, and discover your learning style with our comprehensive questionnaire.</p>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Sections</div>
                     </div>
-
-                    <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; line-height: 2;">
-                        <h4 style="color: #e65100; margin-bottom: 1rem;">⚡ Storms hit the UK</h4>
-
-                        <p>There are heavy storms in the UK. Winds of 60 kilometres per hour
-                        <input type="text" class="fill-blank" id="storm1" placeholder="hit" style="min-width: 100px;"> (hit)
-                        the west coast, with more storms later this weekend. Experts say that these storms are unusual.
-                        'Today, we usually
-                        <input type="text" class="fill-blank" id="storm2" placeholder="be" style="min-width: 80px;"> (be)
-                        very strong. We
-                        <input type="text" class="fill-blank" id="storm3" placeholder="get" style="min-width: 80px;"> (get)
-                        this kind of weather in the winter, not now.'</p>
-
-                        <p>The heavy rain
-                        <input type="text" class="fill-blank" id="storm4" placeholder="cause" style="min-width: 100px;"> (cause)
-                        major transport problems – currently, the trains and ferries
-                        <input type="text" class="fill-blank" id="storm5" placeholder="not work" style="min-width: 120px;"> (not work).</p>
-
-                        <p>The emergency services are helping local residents. 'Right now, we
-                        <input type="text" class="fill-blank" id="storm6" placeholder="move" style="min-width: 100px;"> (move)
-                        people to safe areas and we
-                        <input type="text" class="fill-blank" id="storm7" placeholder="give" style="min-width: 80px;"> (give)
-                        them hot food.' A group of fishermen are lost at sea and a rescue team
-                        <input type="text" class="fill-blank" id="storm8" placeholder="look" style="min-width: 80px;"> (look)
-                        for them. 'We
-                        <input type="text" class="fill-blank" id="storm9" placeholder="not usually fly" style="min-width: 140px;"> (not usually fly)
-                        in this kind of weather, but today
-                        <input type="text" class="fill-blank" id="storm10" placeholder="not be" style="min-width: 80px;"> (not be)
-                        a normal day.</p>
+                    <div class="stat-item">
+                        <div class="stat-number">60+</div>
+                        <div class="stat-label">Questions</div>
                     </div>
-
-                    <button class="check-btn" onclick="checkStormsExercise()">Check Answers</button>
-                    <div class="score-display" id="stormsScore"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">49</div>
+                        <div class="stat-label">Audio Files</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Exercises</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <h3><span class="emoji">💬</span> Speaking Discussion</h3>
-                <div class="info-box tip">
-                    <strong>Discuss with a partner:</strong>
-                    <ol style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
-                        <li>What extreme weather does your country have? <button class="speaker-btn" onclick="playAudio('discussion_questions_question1')" title="Listen">🔊</button></li>
-                        <li>What problems does the extreme weather cause? <button class="speaker-btn" onclick="playAudio('discussion_questions_question2')" title="Listen">🔊</button></li>
-                        <li>Do you think your country's weather is changing? <button class="speaker-btn" onclick="playAudio('discussion_questions_question3')" title="Listen">🔊</button></li>
-                        <li>Which types of weather do you like? Why? <button class="speaker-btn" onclick="playAudio('discussion_questions_question4')" title="Listen">🔊</button></li>
-                    </ol>
+                <div class="tags">
+                    <span class="tag">Past Simple</span>
+                    <span class="tag">Past Continuous</span>
+                    <span class="tag">Personality</span>
                 </div>
+
+                <a href="people_lesson.html" class="start-btn">Start Learning →</a>
             </div>
         </div>
 
-        <!-- Section 3: Winter (COMPLETE) -->
-        <div class="section" id="winter">
-            <div class="card">
-                <h2><span class="emoji">❄️</span> Section 1.2: Winter in Siberia</h2>
-
-                <h3>Reading: "The Big Chill"</h3>
-                <div class="reading-text">
-                    <p><strong>Liam O'Connor</strong> is a familiar face in homes all over the country. Millions of us watch his documentaries. Now he's making a new programme about life in Russia. Here he tells about winter in Siberia.</p>
-
-                    <p><strong>A</strong> - <em>Does winter last a long time?</em> <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence1')">🔊</button><br>
-                    Yes, it does. Generally speaking, winter starts in September and lasts until May – so for about nine months. <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence2')">🔊</button> In the north, the sun never rises in December and January and it's dark nearly all day.</p>
-
-                    <p><strong>B</strong> - <em>Is it really cold?</em> <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence3')">🔊</button><br>
-                    Well, minus 30 or 40 degrees Celsius is normal, but in northern Siberia the temperature sometimes drops to minus 60 or 70 degrees. <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence4')">🔊</button></p>
-
-                    <p><strong>C</strong> - <em>Why is it so cold?</em> <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence5')">🔊</button><br>
-                    One reason is that, in the far north, the sun is always low in the sky and produces very little heat, so the ground stays cold all year. Another reason is that freezing winds come down from the Arctic because there are no mountains or trees to stop them.</p>
-
-                    <p><strong>D</strong> - <em>What about snow?</em> <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence6')">🔊</button><br>
-                    It often snows, but it's rarely heavy. In the far north, snow cover lasts between 260 and 280 days.</p>
-
-                    <p><strong>E</strong> - <em>Is climate change affecting Siberia?</em> <button class="speaker-btn" onclick="playAudio('reading_sentences_sentence7')">🔊</button><br>
-                    Yes, they are. Definitely. Western Siberia is getting warmer faster than anywhere in the world. In fact, it's actually melting. And in some places in eastern Siberia, dangerous gases are rising from the ground. They're stopping the surface from freezing, even in the middle of winter. But it's still very cold!</p>
+        <div class="footer">
+            <div class="footer-stats">
+                <div class="footer-stat">
+                    <div class="footer-stat-number">2</div>
+                    <div class="footer-stat-label">Complete Units</div>
                 </div>
-
-                <h3><span class="emoji">✏️</span> Exercise 2c: Complete the Sentences</h3>
-                <div class="quiz-container">
-                    <p style="line-height: 2; font-size: 1.05rem;">
-                        1. Winter lasts for about <input type="text" class="fill-blank" id="sib1" placeholder="..." style="min-width: 120px;"> in Siberia.<br><br>
-
-                        2. Temperatures of minus 70 degrees are not <input type="text" class="fill-blank" id="sib2" placeholder="..." style="min-width: 100px;">.<br><br>
-
-                        3. The ground stays cold because <input type="text" class="fill-blank" id="sib3" placeholder="the sun" style="min-width: 120px;"> produces very little heat.<br><br>
-
-                        4. In some places in eastern Siberia <input type="text" class="fill-blank" id="sib4" placeholder="..." style="min-width: 100px;"> are melting the frozen ground.<br><br>
-
-                        5. A lot of things <input type="text" class="fill-blank" id="sib5" placeholder="..." style="min-width: 100px;"> in the very cold conditions.<br><br>
-
-                        6. People wear <input type="text" class="fill-blank" id="sib6" placeholder="..." style="min-width: 80px;"> to keep warm in Siberia.
-                    </p>
-                    <button class="check-btn" onclick="checkSiberiaComprehension()">Check Answers</button>
-                    <div class="score-display" id="siberiaScore"></div>
+                <div class="footer-stat">
+                    <div class="footer-stat-number">110+</div>
+                    <div class="footer-stat-label">Interactive Questions</div>
+                </div>
+                <div class="footer-stat">
+                    <div class="footer-stat-number">123</div>
+                    <div class="footer-stat-label">Audio Pronunciations</div>
+                </div>
+                <div class="footer-stat">
+                    <div class="footer-stat-number">100%</div>
+                    <div class="footer-stat-label">Mobile Responsive</div>
                 </div>
             </div>
 
-            <div class="card">
-                <h3><span class="emoji">❓</span> Exercise 5: Question Formation</h3>
-
-                <div class="info-box success">
-                    <h4>Grammar Reminder:</h4>
-                    <p><strong>Present Simple Questions:</strong></p>
-                    <ul style="margin-left: 2rem;">
-                        <li>With <em>be</em>: When be is the main verb, we make present simple questions</li>
-                        <li>With <em>do/does</em>: do/does + subject + infinitive</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Present Continuous Questions:</strong></p>
-                    <ul style="margin-left: 2rem;">
-                        <li>am/is/are + subject + -ing form</li>
-                    </ul>
-                </div>
-
-                <h4>Exercise 5b: Put words in order to make questions</h4>
-                <div class="quiz-container">
-                    <div style="line-height: 2.5;">
-                        <p><strong>1.</strong> sad / you / days / do / on / feel / cloudy / ? <button class="speaker-btn" onclick="playAudio('question_examples_question1')" title="Listen to correct answer">🔊</button></p>
-                        <input type="text" class="fill-blank" id="q1" placeholder="Your answer" style="width: 80%; min-width: 300px;">
-
-                        <p style="margin-top: 1rem;"><strong>2.</strong> wearing / your / teacher / what's / today / ? <button class="speaker-btn" onclick="playAudio('question_examples_question2')" title="Listen to correct answer">🔊</button></p>
-                        <input type="text" class="fill-blank" id="q2" placeholder="Your answer" style="width: 80%; min-width: 300px;">
-
-                        <p style="margin-top: 1rem;"><strong>3.</strong> English / are / fun / learning / you / for / ? <button class="speaker-btn" onclick="playAudio('question_examples_question3')" title="Listen to correct answer">🔊</button></p>
-                        <input type="text" class="fill-blank" id="q3" placeholder="Your answer" style="width: 80%; min-width: 300px;">
-
-                        <p style="margin-top: 1rem;"><strong>4.</strong> time / your / how / spend / free / you / do / ? <button class="speaker-btn" onclick="playAudio('question_examples_question4')" title="Listen to correct answer">🔊</button></p>
-                        <input type="text" class="fill-blank" id="q4" placeholder="Your answer" style="width: 80%; min-width: 300px;">
-
-                        <p style="margin-top: 1rem;"><strong>5.</strong> friends / doing / what / now / are / your / ? <button class="speaker-btn" onclick="playAudio('question_examples_question5')" title="Listen to correct answer">🔊</button></p>
-                        <input type="text" class="fill-blank" id="q5" placeholder="Your answer" style="width: 80%; min-width: 300px;">
-                    </div>
-                    <button class="check-btn" onclick="checkQuestionFormation()">Check Answers</button>
-                    <div class="score-display" id="questionScore"></div>
-                </div>
+            <div class="footer-links">
+                <a href="HOW_TO_CREATE_LESSONS.md" target="_blank">📖 Documentation</a>
+                <a href="PROJECT_README.md" target="_blank">ℹ️ About</a>
+                <a href="https://github.com" target="_blank">💻 GitHub</a>
             </div>
 
-            <div class="card">
-                <h3>Vocabulary: Modifiers</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Temperature</th>
-                            <th>Modifier + Adjective</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>-5°C</td>
-                            <td>It's <strong>very</strong> cold <button class="speaker-btn" onclick="playAudio('modifier_examples_very')">🔊</button> / It's <strong>really</strong> cold <button class="speaker-btn" onclick="playAudio('modifier_examples_really')">🔊</button></td>
-                        </tr>
-                        <tr>
-                            <td>8°C</td>
-                            <td>It's <strong>quite</strong> cold <button class="speaker-btn" onclick="playAudio('modifier_examples_quite')">🔊</button></td>
-                        </tr>
-                        <tr>
-                            <td>1°C</td>
-                            <td>It's <strong>extremely</strong> cold <button class="speaker-btn" onclick="playAudio('modifier_examples_extremely')">🔊</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Section 4: Scenario (NEW!) -->
-        <div class="section" id="scenario">
-            <div class="card">
-                <h2><span class="emoji">🏔️</span> Section 1.3: Latin American Adventure</h2>
-
-                <h3>Situation</h3>
-                <div class="info-box tip">
-                    <p>You work for <strong>Double Action Adventures</strong> - a company that offers adventure holidays.</p>
-                    <p style="margin-top: 1rem;"><strong>Target customers:</strong></p>
-                    <ul style="margin-left: 2rem;">
-                        <li>"First-timers" - people having an adventure holiday for the first time</li>
-                        <li>Older adults (40-60) - active, rich, perhaps retired</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Your task:</strong> Suggest TWO countries for new holidays in Latin America</p>
-                </div>
-
-                <h3>Country Options</h3>
-
-                <div class="vocab-grid">
-                    <div class="vocab-card" style="border-top-color: #4A90E2;">
-                        <h4>🇦🇷 Southern Argentina</h4>
-                        <p><strong>Location:</strong> In the mountains / On the southern coast</p>
-                        <p style="margin-top: 0.5rem;"><strong>Activities:</strong></p>
-                        <ul style="margin-left: 1.5rem;">
-                            <li>Mountain trekking</li>
-                            <li>Horse riding</li>
-                            <li>Three-day Antarctic wildlife cruise</li>
-                            <li>Sea kayaking with whales</li>
-                        </ul>
-                        <p style="margin-top: 0.5rem;"><strong>Weather:</strong></p>
-                        <ul style="margin-left: 1.5rem;">
-                            <li>Winter (March-October): cold & windy - very cold, no trips possible</li>
-                            <li>Summer (Nov-Feb): windy & changeable - cold, trips possible</li>
-                        </ul>
-                    </div>
-
-                    <div class="vocab-card" style="border-top-color: #50C878;">
-                        <h4>🇧🇿 Belize</h4>
-                        <p><strong>Activities:</strong></p>
-                        <ul style="margin-left: 1.5rem;">
-                            <li>On the coast: diving, sea kayaking</li>
-                            <li>In the jungle: jungle trekking, white-water rafting</li>
-                        </ul>
-                        <p style="margin-top: 0.5rem;"><strong>Weather:</strong></p>
-                        <ul style="margin-left: 1.5rem;">
-                            <li>Rainy season (June-Oct): heavy rain</li>
-                            <li>Hurricane season (Aug-Nov): average temp 34°C</li>
-                            <li>Dry season (Nov-May): average temp 30°C</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3><span class="emoji">🗣️</span> Key Language: Agreeing and Disagreeing</h3>
-                <div class="quiz-container">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <div style="background: white; padding: 1rem; border-radius: 8px;">
-                            <h4 style="color: var(--secondary-color);">✅ Agreeing</h4>
-                            <ul style="margin-left: 1.5rem; line-height: 1.8;">
-                                <li>"So do I." <button class="speaker-btn" onclick="playAudio('key_phrases_agreeing1')">🔊</button></li>
-                                <li>"Neither do I." <button class="speaker-btn" onclick="playAudio('key_phrases_agreeing2')">🔊</button></li>
-                                <li>"Do you?" <button class="speaker-btn" onclick="playAudio('key_phrases_agreeing3')">🔊</button></li>
-                            </ul>
-                        </div>
-                        <div style="background: white; padding: 1rem; border-radius: 8px;">
-                            <h4 style="color: var(--accent-color);">❌ Disagreeing</h4>
-                            <ul style="margin-left: 1.5rem; line-height: 1.8;">
-                                <li>"I don't think so" <button class="speaker-btn" onclick="playAudio('key_phrases_disagreeing1')">🔊</button></li>
-                                <li>"What about?" <button class="speaker-btn" onclick="playAudio('key_phrases_disagreeing2')">🔊</button></li>
-                                <li>"I'm not sure." <button class="speaker-btn" onclick="playAudio('key_phrases_disagreeing3')">🔊</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <h3><span class="emoji">✍️</span> Task: Design a Holiday</h3>
-                <div class="quiz-container">
-                    <p><strong>Work with a partner (or write your ideas):</strong></p>
-                    <ol style="margin-left: 2rem; line-height: 2;">
-                        <li>Which country do you think is best for Double Action Adventures?</li>
-                        <li>What do you think of the activities?</li>
-                        <li>How long is the best season for the holidays?</li>
-                        <li>Is the weather OK?</li>
-                    </ol>
-
-                    <textarea id="holidayNotes" placeholder="Write your notes here...&#10;&#10;Example:&#10;I think Argentina is better because...&#10;The activities are good for first-timers...&#10;The weather in summer is..."></textarea>
-
-                    <button class="submit-btn" onclick="saveHolidayNotes()">Save My Notes</button>
-                    <div class="score-display" id="holidayMessage"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 5: Study Skills (NEW!) -->
-        <div class="section" id="study">
-            <div class="card">
-                <h2><span class="emoji">📚</span> Section 1.4: Study & Writing Skills</h2>
-
-                <h3>Dictionary Skills: Understanding Multiple Meanings</h3>
-                <div class="info-box warning">
-                    <p>Many words in English have more than one meaning!</p>
-                </div>
-
-                <h4>Example: "cold"</h4>
-                <div class="reading-text">
-                    <p><strong>cold</strong> /kəʊld/ <em>adjective</em></p>
-                    <ol style="margin-left: 2rem; line-height: 1.8;">
-                        <li>something that is cold is a low temperature and is not warm or hot</li>
-                        <li>cold food is cooked, but is not eaten while it is hot</li>
-                        <li>a cold person is not very friendly or kind</li>
-                    </ol>
-                </div>
-
-                <h4>Exercise: Match sentences with definitions</h4>
-                <div class="quiz-container">
-                    <div class="quiz-question">
-                        <p>a) We eat a lot of cold chicken and salad in the summer.</p>
-                        <select class="fill-blank" id="dict1" style="min-width: 200px; padding: 0.5rem;">
-                            <option value="">Choose definition...</option>
-                            <option value="1">Definition 1</option>
-                            <option value="2">Definition 2</option>
-                            <option value="3">Definition 3</option>
-                        </select>
-                    </div>
-
-                    <div class="quiz-question">
-                        <p>b) Some people think that the British are cold.</p>
-                        <select class="fill-blank" id="dict2" style="min-width: 200px; padding: 0.5rem;">
-                            <option value="">Choose definition...</option>
-                            <option value="1">Definition 1</option>
-                            <option value="2">Definition 2</option>
-                            <option value="3">Definition 3</option>
-                        </select>
-                    </div>
-
-                    <div class="quiz-question">
-                        <p>c) The weather's really cold today.</p>
-                        <select class="fill-blank" id="dict3" style="min-width: 200px; padding: 0.5rem;">
-                            <option value="">Choose definition...</option>
-                            <option value="1">Definition 1</option>
-                            <option value="2">Definition 2</option>
-                            <option value="3">Definition 3</option>
-                        </select>
-                    </div>
-
-                    <button class="check-btn" onclick="checkDictionaryExercise()">Check Answers</button>
-                    <div class="score-display" id="dictScore"></div>
-                </div>
-
-                <h3 style="margin-top: 2rem;"><span class="emoji">🔄</span> Opposites</h3>
-                <div class="quiz-container">
-                    <p>Think of the opposites of these adjectives from this unit:</p>
-                    <div style="line-height: 2.5;">
-                        <p>1. long ↔ <input type="text" class="fill-blank" id="opp1" placeholder="..." style="min-width: 100px;"> <button class="speaker-btn" onclick="playAudio('opposites_long_short')" title="Listen">🔊</button></p>
-                        <p>2. strong ↔ <input type="text" class="fill-blank" id="opp2" placeholder="..." style="min-width: 100px;"> <button class="speaker-btn" onclick="playAudio('opposites_strong_weak')" title="Listen">🔊</button></p>
-                        <p>3. heavy ↔ <input type="text" class="fill-blank" id="opp3" placeholder="..." style="min-width: 100px;"> <button class="speaker-btn" onclick="playAudio('opposites_heavy_light')" title="Listen">🔊</button></p>
-                        <p>4. major ↔ <input type="text" class="fill-blank" id="opp4" placeholder="..." style="min-width: 100px;"> <button class="speaker-btn" onclick="playAudio('opposites_major_minor')" title="Listen">🔊</button></p>
-                    </div>
-                    <button class="check-btn" onclick="checkOpposites()">Check Answers</button>
-                    <div class="score-display" id="oppScore"></div>
-                </div>
-
-                <h3 style="margin-top: 2rem;"><span class="emoji">🔗</span> Linkers</h3>
-                <div class="info-box tip">
-                    <p>Linkers are words like <strong>and, but, also, when</strong>. We use them to join ideas.</p>
-                    <ul style="margin-left: 2rem; margin-top: 0.5rem;">
-                        <li><strong>and</strong> <button class="speaker-btn" onclick="playAudio('linkers_and')">🔊</button> - to join two words or parts of a sentence</li>
-                        <li><strong>when</strong> <button class="speaker-btn" onclick="playAudio('linkers_when')">🔊</button> - to talk about the time that something happens</li>
-                        <li><strong>but</strong> <button class="speaker-btn" onclick="playAudio('linkers_but')">🔊</button> - to add something different or surprising</li>
-                        <li><strong>also</strong> <button class="speaker-btn" onclick="playAudio('linkers_also')">🔊</button> - to add a new fact</li>
-                    </ul>
-                </div>
-
-                <h4>Exercise: Choose the correct linker</h4>
-                <div class="quiz-container">
-                    <div style="line-height: 2.2;">
-                        <p>1. The waiters are friendly
-                        <select class="fill-blank" id="link1" style="min-width: 100px; padding: 0.3rem;">
-                            <option value="">...</option>
-                            <option value="and">and</option>
-                            <option value="but">but</option>
-                        </select>
-                        they speak good English.</p>
-
-                        <p>2. The weather's good in spring. It's
-                        <select class="fill-blank" id="link2" style="min-width: 100px; padding: 0.3rem;">
-                            <option value="">...</option>
-                            <option value="when">when</option>
-                            <option value="also">also</option>
-                        </select>
-                        good in autumn.</p>
-
-                        <p>3. You can go white-water rafting
-                        <select class="fill-blank" id="link3" style="min-width: 100px; padding: 0.3rem;">
-                            <option value="">...</option>
-                            <option value="but">but</option>
-                            <option value="and">and</option>
-                        </select>
-                        you can't go kayaking.</p>
-
-                        <p>4. A good time to visit Venice is in winter
-                        <select class="fill-blank" id="link4" style="min-width: 100px; padding: 0.3rem;">
-                            <option value="">...</option>
-                            <option value="also">also</option>
-                            <option value="when">when</option>
-                        </select>
-                        it isn't crowded.</p>
-                    </div>
-                    <button class="check-btn" onclick="checkLinkers()">Check Answers</button>
-                    <div class="score-display" id="linkScore"></div>
-                </div>
-
-                <h3 style="margin-top: 2rem;"><span class="emoji">✍️</span> Writing Task: Guidebook Entry</h3>
-                <div class="quiz-container">
-                    <p><strong>Write a "When to go" section for a guidebook about your country, area or city.</strong></p>
-                    <p>Write about the weather, but also about some other useful facts (e.g. prices, crowds).</p>
-
-                    <textarea id="guidebookText" placeholder="Write your guidebook entry here...&#10;&#10;Example:&#10;&#10;WHEN TO GO&#10;&#10;The best time to visit [your city] is in spring (April-May) when the weather is warm and sunny. Temperatures are usually around 20°C and it doesn't rain very often.&#10;&#10;SUMMER (June-August)&#10;In summer, the city is very hot and crowded. Prices are high and many hotels are fully booked...&#10;&#10;Continue with Autumn and Winter..." style="min-height: 250px;"></textarea>
-
-                    <button class="submit-btn" onclick="saveGuidebook()">Save My Guidebook Entry</button>
-                    <div class="score-display" id="guidebookMessage"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 6: Grammar -->
-        <div class="section" id="grammar">
-            <div class="card">
-                <h2><span class="emoji">📖</span> Grammar Summary</h2>
-
-                <h3>Present Simple vs Present Continuous</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Use</th>
-                            <th>Present Simple</th>
-                            <th>Present Continuous</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Regular actions/habits</strong></td>
-                            <td>We always help everyone <button class="speaker-btn" onclick="playAudio('grammar_examples_present_simple_habit')">🔊</button></td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Facts/general truths</strong></td>
-                            <td>Hurricanes are unusual <button class="speaker-btn" onclick="playAudio('grammar_examples_present_simple_fact')">🔊</button></td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Actions happening now</strong></td>
-                            <td>-</td>
-                            <td>I'm covering the windows <button class="speaker-btn" onclick="playAudio('grammar_examples_present_continuous_now')">🔊</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Trends/changes</strong></td>
-                            <td>-</td>
-                            <td>Hurricanes are getting stronger <button class="speaker-btn" onclick="playAudio('grammar_examples_present_continuous_trend')">🔊</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3 style="margin-top: 2rem;">Practice Exercise</h3>
-                <div class="quiz-container">
-                    <p style="line-height: 2; font-size: 1.1rem;">
-                        1. 'Be quiet! I <input type="text" class="fill-blank" id="gram1" placeholder="..."> (listen) to the news on the radio.' <button class="speaker-btn" onclick="playAudio('grammar_practice_sentence1')" title="Listen to correct answer">🔊</button><br><br>
-                        2. In India, most rain usually <input type="text" class="fill-blank" id="gram2" placeholder="..."> (fall) in the summer months. <button class="speaker-btn" onclick="playAudio('grammar_practice_sentence2')" title="Listen to correct answer">🔊</button><br><br>
-                        3. Lightning <input type="text" class="fill-blank" id="gram3" placeholder="..."> (hit) the Empire State Building 500 times every year. <button class="speaker-btn" onclick="playAudio('grammar_practice_sentence3')" title="Listen to correct answer">🔊</button><br><br>
-                        4. These days, more rain <input type="text" class="fill-blank" id="gram4" placeholder="..."> (fall) in Australia. <button class="speaker-btn" onclick="playAudio('grammar_practice_sentence4')" title="Listen to correct answer">🔊</button><br><br>
-                        5. It <input type="text" class="fill-blank" id="gram5" placeholder="..."> (not snow) in tropical countries like Brazil. <button class="speaker-btn" onclick="playAudio('grammar_practice_sentence5')" title="Listen to correct answer">🔊</button><br><br>
-                        6. 'It <input type="text" class="fill-blank" id="gram6" placeholder="..."> (rain) now. Let's go to the park.' <button class="speaker-btn" onclick="playAudio('grammar_practice_sentence6')" title="Listen to correct answer">🔊</button>
-                    </p>
-                    <button class="check-btn" onclick="checkGrammarPractice()">Check Answers</button>
-                    <div class="score-display" id="gramScore"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 7: Vocabulary -->
-        <div class="section" id="vocabulary">
-            <div class="card">
-                <h2><span class="emoji">📝</span> Vocabulary Bank</h2>
-
-                <h3>Weather Words</h3>
-                <div class="vocab-grid">
-                    <div class="vocab-card">
-                        <h4>blizzard <button class="speaker-btn" onclick="playAudio('weather_words_blizzard')">🔊</button></h4>
-                        <div class="type">noun</div>
-                        <div class="meaning">Heavy snowstorm with strong winds <button class="speaker-btn" onclick="playAudio('weather_definitions_blizzard')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>drought <button class="speaker-btn" onclick="playAudio('weather_words_drought')">🔊</button></h4>
-                        <div class="type">noun</div>
-                        <div class="meaning">Long period with no rain <button class="speaker-btn" onclick="playAudio('weather_definitions_drought')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>hurricane <button class="speaker-btn" onclick="playAudio('weather_words_hurricane')">🔊</button></h4>
-                        <div class="type">noun</div>
-                        <div class="meaning">Tropical storm with very strong winds <button class="speaker-btn" onclick="playAudio('weather_definitions_hurricane')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>storm <button class="speaker-btn" onclick="playAudio('weather_words_storm')">🔊</button></h4>
-                        <div class="type">noun</div>
-                        <div class="meaning">Bad weather with wind and rain <button class="speaker-btn" onclick="playAudio('weather_definitions_storm')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>humid <button class="speaker-btn" onclick="playAudio('weather_words_humid')">🔊</button></h4>
-                        <div class="type">adjective</div>
-                        <div class="meaning">Air that feels wet and heavy <button class="speaker-btn" onclick="playAudio('weather_definitions_humid')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>foggy <button class="speaker-btn" onclick="playAudio('weather_words_foggy')">🔊</button></h4>
-                        <div class="type">adjective</div>
-                        <div class="meaning">With thick cloud near the ground <button class="speaker-btn" onclick="playAudio('weather_definitions_foggy')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>windy <button class="speaker-btn" onclick="playAudio('weather_words_windy')">🔊</button></h4>
-                        <div class="type">adjective</div>
-                        <div class="meaning">With a lot of wind <button class="speaker-btn" onclick="playAudio('weather_definitions_windy')">🔊</button></div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>cloudy <button class="speaker-btn" onclick="playAudio('weather_words_cloudy')">🔊</button></h4>
-                        <div class="type">adjective</div>
-                        <div class="meaning">With many clouds in the sky <button class="speaker-btn" onclick="playAudio('weather_definitions_cloudy')">🔊</button></div>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 2rem;">Modifiers</h3>
-                <div class="vocab-grid">
-                    <div class="vocab-card">
-                        <h4>quite <button class="speaker-btn" onclick="playAudio('modifiers_quite')">🔊</button></h4>
-                        <div class="meaning">moderately, fairly (weaker intensity)</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>very <button class="speaker-btn" onclick="playAudio('modifiers_very')">🔊</button></h4>
-                        <div class="meaning">to a high degree (strong intensity)</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>really <button class="speaker-btn" onclick="playAudio('modifiers_really')">🔊</button></h4>
-                        <div class="meaning">truly, genuinely (strong intensity)</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>extremely <button class="speaker-btn" onclick="playAudio('modifiers_extremely')">🔊</button></h4>
-                        <div class="meaning">to the highest degree (strongest intensity)</div>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 2rem;">Adventure Activities</h3>
-                <div class="vocab-grid">
-                    <div class="vocab-card">
-                        <h4>mountain trekking <button class="speaker-btn" onclick="playAudio('activities_mountain_trekking')">🔊</button></h4>
-                        <div class="meaning">Hiking in the mountains</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>horse riding <button class="speaker-btn" onclick="playAudio('activities_horse_riding')">🔊</button></h4>
-                        <div class="meaning">Riding horses</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>sea kayaking <button class="speaker-btn" onclick="playAudio('activities_sea_kayaking')">🔊</button></h4>
-                        <div class="meaning">Paddling a kayak on the sea</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>white-water rafting <button class="speaker-btn" onclick="playAudio('activities_white_water_rafting')">🔊</button></h4>
-                        <div class="meaning">Rafting on fast-flowing rivers</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>diving <button class="speaker-btn" onclick="playAudio('activities_diving')">🔊</button></h4>
-                        <div class="meaning">Swimming underwater</div>
-                    </div>
-                    <div class="vocab-card">
-                        <h4>wildlife watching <button class="speaker-btn" onclick="playAudio('activities_wildlife_watching')">🔊</button></h4>
-                        <div class="meaning">Observing animals in nature</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 8: Final Quiz -->
-        <div class="section" id="quiz">
-            <div class="card">
-                <h2><span class="emoji">✅</span> Final Quiz</h2>
-                <p style="margin-bottom: 2rem;">Test your knowledge of Unit 1: Weather!</p>
-
-                <div class="quiz-container">
-                    <div class="quiz-question">
-                        <h4>1. Which tense do we use for regular actions and habits?</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final1" value="a">
-                                Present Simple
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final1" value="b">
-                                Present Continuous
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>2. "It _____ now, so we can't go outside."</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final2" value="a">
-                                rains
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final2" value="b">
-                                is raining
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>3. What is a hurricane?</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final3" value="a">
-                                A heavy snowstorm
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final3" value="b">
-                                A tropical storm with very strong winds
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final3" value="c">
-                                A long period with no rain
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>4. Which modifier is the STRONGEST?</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final4" value="a">
-                                quite
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final4" value="b">
-                                very
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final4" value="c">
-                                extremely
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>5. "The number of hurricanes _____ every year."</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final5" value="a">
-                                increases
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final5" value="b">
-                                is increasing
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>6. What is a drought?</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final6" value="a">
-                                A long period with no rain
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final6" value="b">
-                                Heavy rain
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final6" value="c">
-                                Strong wind
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>7. Which linker means "to add something different or surprising"?</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final7" value="a">
-                                and
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final7" value="b">
-                                but
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final7" value="c">
-                                when
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question">
-                        <h4>8. "We _____ TV every evening." (regular habit)</h4>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="final8" value="a">
-                                watch
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="final8" value="b">
-                                are watching
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="check-btn" onclick="checkFinalQuiz()">Submit Quiz</button>
-                    <div class="score-display" id="finalScore"></div>
-                </div>
-
-                <div class="info-box success" style="margin-top: 2rem; display: none;" id="congratulations">
-                    <h3>🎉 Congratulations!</h3>
-                    <p>You've completed Unit 1: Weather! Great job!</p>
-                    <p style="margin-top: 1rem;">Next up: <strong>Unit 2 - People</strong> 👥</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="nav-buttons">
-            <button class="prev-btn" onclick="previousSection()">← Previous</button>
-            <button class="next-btn" onclick="nextSection()">Next →</button>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                Made with ❤️ for English language learners<br>
+                <small>Based on Language Leader Pre-Intermediate by Pearson Education</small>
+            </p>
         </div>
     </div>
 
     <script>
-        // Global Variables
-        let currentSection = 0;
-        const sections = ['intro', 'extremes', 'winter', 'scenario', 'study', 'grammar', 'vocabulary', 'quiz'];
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateProgress();
-            setupNavigation();
+        // Add hover animation effect
+        document.querySelectorAll('.lesson-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
         });
 
-        // Setup Navigation
-        function setupNavigation() {
-            const navPills = document.querySelectorAll('.nav-pill');
-            navPills.forEach((pill, index) => {
-                pill.addEventListener('click', function() {
-                    const section = this.getAttribute('data-section');
-                    showSection(section);
-                    currentSection = sections.indexOf(section);
-                    updateProgress();
-                });
-            });
-        }
-
-        // Show Section
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-            document.querySelectorAll('.nav-pill').forEach(pill => {
-                pill.classList.remove('active');
-                if (pill.getAttribute('data-section') === sectionId) {
-                    pill.classList.add('active');
-                }
-            });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Next/Previous Section
-        function nextSection() {
-            if (currentSection < sections.length - 1) {
-                currentSection++;
-                showSection(sections[currentSection]);
-                updateProgress();
-            }
-        }
-
-        function previousSection() {
-            if (currentSection > 0) {
-                currentSection--;
-                showSection(sections[currentSection]);
-                updateProgress();
-            }
-        }
-
-        // Update Progress Bar
-        function updateProgress() {
-            const progress = ((currentSection + 1) / sections.length) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-        }
-
-        // Check Tense Identification
-        function checkTenseIdentification() {
-            const answers = { tense1: 'pc', tense2: 'ps', tense3: 'pc', tense4: 'ps' };
-            let score = 0;
-            Object.keys(answers).forEach(q => {
-                const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const options = document.querySelectorAll(`input[name="${q}"]`);
-                options.forEach(opt => {
-                    const label = opt.parentElement;
-                    label.classList.remove('correct', 'incorrect');
-                    if (opt.value === answers[q]) label.classList.add('correct');
-                    if (selected && opt === selected && opt.value !== answers[q]) label.classList.add('incorrect');
-                });
-                if (selected && selected.value === answers[q]) score++;
-            });
-            displayScore('tenseScore', score, 4);
-        }
-
-        // Check Storms Exercise
-        function checkStormsExercise() {
-            const answers = {
-                storm1: 'are hitting', storm2: 'are', storm3: 'get',
-                storm4: 'is causing', storm5: 'are not working',
-                storm6: 'are moving', storm7: 'are giving',
-                storm8: 'is looking', storm9: 'do not usually fly',
-                storm10: 'is not'
-            };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const input = document.getElementById(id);
-                const userAnswer = input.value.trim().toLowerCase().replace(/'/g, '');
-                const correctAnswer = answers[id].toLowerCase().replace(/'/g, '');
-                input.classList.remove('correct', 'incorrect');
-                if (userAnswer === correctAnswer || userAnswer === correctAnswer.replace('are ', '').replace('is ', '')) {
-                    input.classList.add('correct');
-                    score++;
-                } else {
-                    input.classList.add('incorrect');
-                }
-            });
-            displayScore('stormsScore', score, 10);
-        }
-
-        // Check Siberia Comprehension
-        function checkSiberiaComprehension() {
-            const answers = {
-                sib1: 'nine months', sib2: 'normal', sib3: 'the sun',
-                sib4: 'gases', sib5: 'freeze', sib6: 'fur'
-            };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const input = document.getElementById(id);
-                const userAnswer = input.value.trim().toLowerCase();
-                const correctAnswer = answers[id].toLowerCase();
-                input.classList.remove('correct', 'incorrect');
-                if (userAnswer.includes(correctAnswer.split(' ')[0])) {
-                    input.classList.add('correct');
-                    score++;
-                } else {
-                    input.classList.add('incorrect');
-                }
-            });
-            displayScore('siberiaScore', score, 6);
-        }
-
-        // Check Question Formation
-        function checkQuestionFormation() {
-            const answers = {
-                q1: 'do you feel sad on cloudy days',
-                q2: "what's your teacher wearing today",
-                q3: 'are you learning english for fun',
-                q4: 'how do you spend your free time',
-                q5: 'what are your friends doing now'
-            };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const input = document.getElementById(id);
-                const userAnswer = input.value.trim().toLowerCase().replace(/\?/g, '');
-                const correctAnswer = answers[id];
-                input.classList.remove('correct', 'incorrect');
-                if (userAnswer === correctAnswer) {
-                    input.classList.add('correct');
-                    score++;
-                } else {
-                    input.classList.add('incorrect');
-                }
-            });
-            displayScore('questionScore', score, 5);
-        }
-
-        // Check Dictionary Exercise
-        function checkDictionaryExercise() {
-            const answers = { dict1: '2', dict2: '3', dict3: '1' };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const select = document.getElementById(id);
-                if (select.value === answers[id]) {
-                    select.style.borderColor = 'var(--secondary-color)';
-                    select.style.background = '#d4edda';
-                    score++;
-                } else if (select.value) {
-                    select.style.borderColor = 'var(--accent-color)';
-                    select.style.background = '#f8d7da';
-                }
-            });
-            displayScore('dictScore', score, 3);
-        }
-
-        // Check Opposites
-        function checkOpposites() {
-            const answers = { opp1: 'short', opp2: 'weak', opp3: 'light', opp4: 'minor' };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const input = document.getElementById(id);
-                const userAnswer = input.value.trim().toLowerCase();
-                input.classList.remove('correct', 'incorrect');
-                if (userAnswer === answers[id]) {
-                    input.classList.add('correct');
-                    score++;
-                } else {
-                    input.classList.add('incorrect');
-                }
-            });
-            displayScore('oppScore', score, 4);
-        }
-
-        // Check Linkers
-        function checkLinkers() {
-            const answers = { link1: 'and', link2: 'also', link3: 'but', link4: 'when' };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const select = document.getElementById(id);
-                if (select.value === answers[id]) {
-                    select.style.borderColor = 'var(--secondary-color)';
-                    select.style.background = '#d4edda';
-                    score++;
-                } else if (select.value) {
-                    select.style.borderColor = 'var(--accent-color)';
-                    select.style.background = '#f8d7da';
-                }
-            });
-            displayScore('linkScore', score, 4);
-        }
-
-        // Check Grammar Practice
-        function checkGrammarPractice() {
-            const answers = {
-                gram1: 'am listening', gram2: 'falls', gram3: 'hits',
-                gram4: 'is falling', gram5: "doesn't snow", gram6: "isn't raining"
-            };
-            let score = 0;
-            Object.keys(answers).forEach(id => {
-                const input = document.getElementById(id);
-                const userAnswer = input.value.trim().toLowerCase().replace(/'/g, '');
-                const correctAnswer = answers[id].toLowerCase().replace(/'/g, '');
-                input.classList.remove('correct', 'incorrect');
-                if (userAnswer === correctAnswer) {
-                    input.classList.add('correct');
-                    score++;
-                } else {
-                    input.classList.add('incorrect');
-                }
-            });
-            displayScore('gramScore', score, 6);
-        }
-
-        // Save Holiday Notes
-        function saveHolidayNotes() {
-            const notes = document.getElementById('holidayNotes').value;
-            if (notes.trim().length > 50) {
-                const msg = document.getElementById('holidayMessage');
-                msg.innerHTML = '<h3>✅ Great work!</h3><p>Your holiday planning notes have been saved!</p>';
-                msg.classList.add('show');
-            } else {
-                alert('Please write more details about your holiday plans (at least 50 characters).');
-            }
-        }
-
-        // Save Guidebook
-        function saveGuidebook() {
-            const text = document.getElementById('guidebookText').value;
-            if (text.trim().length > 100) {
-                const msg = document.getElementById('guidebookMessage');
-                msg.innerHTML = '<h3>✅ Excellent!</h3><p>Your guidebook entry has been saved! Well done!</p>';
-                msg.classList.add('show');
-            } else {
-                alert('Please write more for your guidebook entry (at least 100 characters).');
-            }
-        }
-
-        // Check Final Quiz
-        function checkFinalQuiz() {
-            const answers = {
-                final1: 'a', final2: 'b', final3: 'b', final4: 'c',
-                final5: 'b', final6: 'a', final7: 'b', final8: 'a'
-            };
-            let score = 0;
-            Object.keys(answers).forEach(q => {
-                const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const options = document.querySelectorAll(`input[name="${q}"]`);
-                options.forEach(opt => {
-                    const label = opt.parentElement;
-                    label.classList.remove('correct', 'incorrect');
-                    if (opt.value === answers[q]) label.classList.add('correct');
-                    if (selected && opt === selected && opt.value !== answers[q]) label.classList.add('incorrect');
-                });
-                if (selected && selected.value === answers[q]) score++;
-            });
-            displayScore('finalScore', score, 8);
-            if (score === 8) {
-                setTimeout(() => {
-                    document.getElementById('congratulations').style.display = 'block';
-                }, 1000);
-            }
-        }
-
-        // Display Score
-        function displayScore(elementId, score, total) {
-            const percentage = (score / total) * 100;
-            const scoreElement = document.getElementById(elementId);
-            let message = '';
-            let emoji = '';
-            if (percentage === 100) {
-                message = 'Perfect!';
-                emoji = '🎉';
-            } else if (percentage >= 80) {
-                message = 'Great job!';
-                emoji = '👏';
-            } else if (percentage >= 60) {
-                message = 'Good effort!';
-                emoji = '👍';
-            } else {
-                message = 'Keep practicing!';
-                emoji = '💪';
-            }
-            scoreElement.innerHTML = `<h3>${emoji} ${message}</h3><p style="font-size: 1.5rem; margin-top: 1rem;">Your score: ${score} / ${total} (${percentage.toFixed(0)}%)</p>`;
-            scoreElement.classList.add('show');
-        }
-
-        // Keyboard Navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight') nextSection();
-            else if (e.key === 'ArrowLeft') previousSection();
-        });
-
-        // Audio Playback
-        let currentAudio = null;
-        let currentButton = null;
-
-        function playAudio(filename) {
-            const audioPath = `audio/${filename}.mp3`;
-
-            // If same audio is playing, stop it
-            if (currentAudio && !currentAudio.paused && currentAudio.src.includes(filename)) {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-                if (currentButton) {
-                    currentButton.classList.remove('playing');
-                }
-                currentAudio = null;
-                currentButton = null;
-                return;
-            }
-
-            // Stop any currently playing audio
-            if (currentAudio) {
-                currentAudio.pause();
-                currentAudio.currentTime = 0;
-                if (currentButton) {
-                    currentButton.classList.remove('playing');
-                }
-            }
-
-            // Create and play new audio
-            currentAudio = new Audio(audioPath);
-            currentButton = event.target;
-            currentButton.classList.add('playing');
-
-            currentAudio.play().catch(error => {
-                console.error('Error playing audio:', error);
-                currentButton.classList.remove('playing');
-            });
-
-            // Remove playing class when audio ends
-            currentAudio.addEventListener('ended', function() {
-                if (currentButton) {
-                    currentButton.classList.remove('playing');
-                }
-                currentAudio = null;
-                currentButton = null;
-            });
-        }
-
-        // Preload some audio files for faster playback
-        window.addEventListener('load', function() {
-            const commonWords = [
-                'weather_words_blizzard',
-                'weather_words_drought',
-                'weather_words_hurricane',
-                'weather_words_storm'
-            ];
-
-            commonWords.forEach(word => {
-                const audio = new Audio(`audio/${word}.mp3`);
-                audio.preload = 'auto';
+        // Prevent default click when clicking on the button
+        document.querySelectorAll('.start-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
             });
         });
     </script>

@@ -1,0 +1,104 @@
+{
+  "weather_words": {
+    "blizzard": "blizzard",
+    "drought": "drought",
+    "hurricane": "hurricane",
+    "storm": "storm",
+    "humid": "humid",
+    "foggy": "foggy",
+    "windy": "windy",
+    "cloudy": "cloudy"
+  },
+  "weather_definitions": {
+    "blizzard": "Heavy snowstorm with strong winds",
+    "drought": "Long period with no rain",
+    "hurricane": "Tropical storm with very strong winds",
+    "storm": "Bad weather with wind and rain",
+    "humid": "Air that feels wet and heavy",
+    "foggy": "With thick cloud near the ground",
+    "windy": "With a lot of wind",
+    "cloudy": "With many clouds in the sky"
+  },
+  "weather_examples": {
+    "blizzard": "Following yesterday's blizzards",
+    "drought": "experiencing a serious drought",
+    "hurricane": "Hurricane Katrina hit the US coast",
+    "storm": "There are heavy storms in the UK"
+  },
+  "modifiers": {
+    "quite": "quite",
+    "very": "very",
+    "really": "really",
+    "extremely": "extremely"
+  },
+  "modifier_examples": {
+    "quite": "It's quite cold",
+    "very": "It's very cold",
+    "really": "It's really cold",
+    "extremely": "It's extremely cold"
+  },
+  "activities": {
+    "mountain_trekking": "mountain trekking",
+    "horse_riding": "horse riding",
+    "sea_kayaking": "sea kayaking",
+    "white_water_rafting": "white-water rafting",
+    "diving": "diving",
+    "wildlife_watching": "wildlife watching"
+  },
+  "grammar_examples": {
+    "present_simple_habit": "We always help everyone",
+    "present_simple_fact": "Hurricanes are unusual",
+    "present_continuous_now": "I'm covering the windows",
+    "present_continuous_trend": "Hurricanes are getting stronger"
+  },
+  "question_examples": {
+    "question1": "Do you feel sad on cloudy days?",
+    "question2": "What's your teacher wearing today?",
+    "question3": "Are you learning English for fun?",
+    "question4": "How do you spend your free time?",
+    "question5": "What are your friends doing now?"
+  },
+  "reading_sentences": {
+    "sentence1": "Does winter last a long time?",
+    "sentence2": "Yes, it does. Generally speaking, winter starts in September and lasts until May",
+    "sentence3": "Is it really cold?",
+    "sentence4": "Well, minus 30 or 40 degrees Celsius is normal",
+    "sentence5": "Why is it so cold?",
+    "sentence6": "What about snow?",
+    "sentence7": "Is climate change affecting Siberia?"
+  },
+  "opposites": {
+    "long_short": "long - short",
+    "strong_weak": "strong - weak",
+    "heavy_light": "heavy - light",
+    "major_minor": "major - minor"
+  },
+  "linkers": {
+    "and": "and",
+    "but": "but",
+    "also": "also",
+    "when": "when"
+  },
+  "key_phrases": {
+    "agreeing1": "So do I",
+    "agreeing2": "Neither do I",
+    "agreeing3": "Do you?",
+    "disagreeing1": "I don't think so",
+    "disagreeing2": "What about?",
+    "disagreeing3": "I'm not sure"
+  },
+  "grammar_practice": {
+    "sentence1": "Be quiet! I'm listening to the news on the radio.",
+    "sentence2": "In India, most rain usually falls in the summer months.",
+    "sentence3": "Lightning hits the Empire State Building 500 times every year.",
+    "sentence4": "These days, more rain is falling in Australia.",
+    "sentence5": "It doesn't snow in tropical countries like Brazil.",
+    "sentence6": "It isn't raining now. Let's go to the park."
+  },
+  "discussion_questions": {
+    "question1": "What extreme weather does your country have?",
+    "question2": "What problems does the extreme weather cause?",
+    "question3": "Do you think your country's weather is changing?",
+    "question4": "Which types of weather do you like? Why?"
+  }
+}

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: People - Interactive Lesson</title>
+    <link rel="stylesheet" href="lesson.css">
+</head>
+<body>
+    <header>
+        <h1>👥 Unit 2: People</h1>
+        <p>"Well done is better than well said." — Benjamin Franklin</p>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Pills -->
+        <div class="nav-pills" id="navPills">
+            <div class="nav-pill active" data-section="intro">📋 Overview</div>
+            <div class="nav-pill" data-section="inspiration">💪 Inspiration</div>
+            <div class="nav-pill" data-section="creative">🎨 Creative Lives</div>
+            <div class="nav-pill" data-section="scenario">🏠 Scenario</div>
+            <div class="nav-pill" data-section="study">📚 Study Skills</div>
+            <div class="nav-pill" data-section="quiz">✅ Final Quiz</div>
+        </div>
+
+        <!-- Section: Overview -->
+        <div class="section active" id="intro">
+            <div class="card">
+                <h2><span class="emoji">🎯</span> Learning Objectives</h2>
+                <p>By the end of this unit, you will be able to:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                    <li>✅ Use past simple and past continuous tenses correctly</li>
+                    <li>✅ Describe people's personalities and appearance</li>
+                    <li>✅ Talk about past events and tell life stories</li>
+                    <li>✅ Understand your learning style</li>
+                    <li>✅ Keep a learning diary</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="emoji">🗂️</span> Topics Covered</h2>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>Grammar</h4>
+                        <p>Past Simple, Past Continuous, Time expressions</p>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>Vocabulary</h4>
+                        <p>Personality adjectives, Appearance, Character traits</p>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>Skills</h4>
+                        <p>Describing people, Learning styles, Keeping a diary</p>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>Scenario</h4>
+                        <p>Sharing a flat, Choosing a flatmate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2.1: INSPIRATION -->
+        <div class="section" id="inspiration">
+            <div class="card">
+                <h2><span class="emoji">💪</span> 2.1 INSPIRATION</h2>
+
+                <h3>Reading: Housewife Races Out of Poverty</h3>
+                <div class="reading-text">
+                    <p>Yesterday, Chimokel Chilapong, a Kenyan housewife and mother of four, beat hundreds of professional athletes and won the Nairobi marathon and $12,000. <button class="speaker-btn" onclick="playAudio('housewife_story_sentence1')">🔊</button></p>
+
+                    <p>This was her first marathon race and she ran it in 2 hours, 39 minutes and 9 seconds. The other runners included professionals such as Joyce Chepchumba, the three times winner of the London marathon. <button class="speaker-btn" onclick="playAudio('housewife_story_sentence2')">🔊</button></p>
+
+                    <p>Chimokel only started running a year ago, in April, to pay for her children's education. Now, in Kenya, she is a hero and an inspirational person. <button class="speaker-btn" onclick="playAudio('housewife_story_sentence3')">🔊</button></p>
+
+                    <p>People think she is a determined woman, a dedicated mother and a talented person. Next week, there is a party in her honour. <button class="speaker-btn" onclick="playAudio('housewife_story_sentence4')">🔊</button></p>
+                </div>
+
+                <h3><span class="emoji">❓</span> Exercise 2: Comprehension Questions</h3>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. What does Chimokel normally do in her life?</h4>
+                        <input type="text" class="fill-blank" id="comp1" placeholder="Your answer" style="width: 80%; min-width: 300px;">
+                    </div>
+                    <div class="quiz-question">
+                        <h4>2. What is Joyce Chepchumba's job?</h4>
+                        <input type="text" class="fill-blank" id="comp2" placeholder="Your answer" style="width: 80%; min-width: 300px;">
+                    </div>
+                    <div class="quiz-question">
+                        <h4>3. Why does Chimokel run in these races?</h4>
+                        <input type="text" class="fill-blank" id="comp3" placeholder="Your answer" style="width: 80%; min-width: 300px;">
+                    </div>
+                    <div class="quiz-question">
+                        <h4>4. What do the Kenyans think of her?</h4>
+                        <input type="text" class="fill-blank" id="comp4" placeholder="Your answer" style="width: 80%; min-width: 300px;">
+                    </div>
+                    <button class="check-btn" onclick="checkComprehension()">Check Answers</button>
+                    <div class="score-display" id="compScore"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="emoji">📝</span> Vocabulary: Personality Adjectives</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>dedicated <button class="speaker-btn" onclick="playAudio('personality_dedicated')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Working hard at something because it's very important to you <button class="speaker-btn" onclick="playAudio('personality_def_dedicated')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>determined <button class="speaker-btn" onclick="playAudio('personality_determined')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Having a strong desire to succeed <button class="speaker-btn" onclick="playAudio('personality_def_determined')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>friendly <button class="speaker-btn" onclick="playAudio('personality_friendly')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Behaving in a kind and pleasant way <button class="speaker-btn" onclick="playAudio('personality_def_friendly')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>hard-working <button class="speaker-btn" onclick="playAudio('personality_hardworking')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Putting a lot of effort into your job <button class="speaker-btn" onclick="playAudio('personality_def_hardworking')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>helpful <button class="speaker-btn" onclick="playAudio('personality_helpful')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Always ready to help other people <button class="speaker-btn" onclick="playAudio('personality_def_helpful')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>inspirational <button class="speaker-btn" onclick="playAudio('personality_inspirational')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Making people want to achieve something <button class="speaker-btn" onclick="playAudio('personality_def_inspirational')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>kind <button class="speaker-btn" onclick="playAudio('personality_kind')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Caring about others and being generous <button class="speaker-btn" onclick="playAudio('personality_def_kind')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>lovely <button class="speaker-btn" onclick="playAudio('personality_lovely')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Very attractive or beautiful <button class="speaker-btn" onclick="playAudio('personality_def_lovely')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>patient <button class="speaker-btn" onclick="playAudio('personality_patient')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Able to wait calmly for a long time <button class="speaker-btn" onclick="playAudio('personality_def_patient')">🔊</button></div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>talented <button class="speaker-btn" onclick="playAudio('personality_talented')">🔊</button></h4>
+                        <div class="type">adjective</div>
+                        <div class="meaning">Having a natural ability to do something well <button class="speaker-btn" onclick="playAudio('personality_def_talented')">🔊</button></div>
+                    </div>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise 4b: Choose the Best Adjective</h3>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. She is very _____. She always does her training.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="vocab1" value="a"> dedicated</label>
+                            <label class="quiz-option"><input type="radio" name="vocab1" value="b"> lovely</label>
+                            <label class="quiz-option"><input type="radio" name="vocab1" value="c"> friendly</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>2. Her husband is _____. He makes breakfast every morning.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="vocab2" value="a"> helpful</label>
+                            <label class="quiz-option"><input type="radio" name="vocab2" value="b"> talented</label>
+                            <label class="quiz-option"><input type="radio" name="vocab2" value="c"> determined</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>3. She is very _____. She never stops and she wants to succeed.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="vocab3" value="a"> kind</label>
+                            <label class="quiz-option"><input type="radio" name="vocab3" value="b"> patient</label>
+                            <label class="quiz-option"><input type="radio" name="vocab3" value="c"> determined</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>4. She is _____. Many people now want to succeed like her.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="vocab4" value="a"> hard-working</label>
+                            <label class="quiz-option"><input type="radio" name="vocab4" value="b"> inspirational</label>
+                            <label class="quiz-option"><input type="radio" name="vocab4" value="c"> kind</label>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkVocabExercise()">Check Answers</button>
+                    <div class="score-display" id="vocabScore"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="emoji">📖</span> Grammar: Past Simple</h3>
+                <div class="info-box tip">
+                    <p><strong>We use the past simple to talk about finished actions and situations in the past.</strong></p>
+                    <p style="margin-top: 1rem;">We know, and often say, the time of the action or situation.</p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li><strong>Regular verbs:</strong> add -ed to the infinitive (e.g., started, trained)</li>
+                        <li><strong>Sometimes only -d:</strong> e.g., arrived, lived</li>
+                        <li><strong>Spelling changes:</strong> e.g., married, tried</li>
+                        <li><strong>Irregular verbs:</strong> use a different word (e.g., left, went, won)</li>
+                    </ul>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise 5a: Match Beginnings and Endings</h3>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. Her mother died ___</h4>
+                        <select class="fill-blank" id="match1" style="min-width: 200px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="a">when she was sixteen</option>
+                            <option value="b">one year ago</option>
+                            <option value="c">one year later</option>
+                            <option value="d">in the same year</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>2. She left school ___</h4>
+                        <select class="fill-blank" id="match2" style="min-width: 200px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="a">when she was sixteen</option>
+                            <option value="b">one year ago</option>
+                            <option value="c">one year later</option>
+                            <option value="d">in the same year</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>3. She married Benjamin ___</h4>
+                        <select class="fill-blank" id="match3" style="min-width: 200px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="a">when she was sixteen</option>
+                            <option value="b">one year ago</option>
+                            <option value="c">one year later</option>
+                            <option value="d">in the same year</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>4. She started training ___</h4>
+                        <select class="fill-blank" id="match4" style="min-width: 200px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="a">when she was sixteen</option>
+                            <option value="b">one year ago</option>
+                            <option value="c">one year later</option>
+                            <option value="d">in the same year</option>
+                        </select>
+                    </div>
+                    <button class="check-btn" onclick="checkMatching()">Check Answers</button>
+                    <div class="score-display" id="matchScore"></div>
+                </div>
+
+                <h3><span class="emoji">📝</span> Exercise 6: Complete the Interview</h3>
+                <div class="quiz-container">
+                    <div class="info-box warning">
+                        <strong>Instructions:</strong> Use the correct form of the verbs: be, not come, eat, not have, prepare, run, speak, stay, train, watch, get up
+                    </div>
+
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 10px; line-height: 2.2;">
+                        <p><strong>J:</strong> Tell us more about your training. How did you prepare for the race?</p>
+
+                        <p><strong>C:</strong> Well, I <input type="text" class="fill-blank" id="int1" placeholder="..."> every day. I <input type="text" class="fill-blank" id="int2" placeholder="..."> about ten kilometres each time.</p>
+
+                        <p><strong>J:</strong> How did you feel before the race?</p>
+
+                        <p><strong>C:</strong> I <input type="text" class="fill-blank" id="int3" placeholder="..."> a bit nervous. I <input type="text" class="fill-blank" id="int4" placeholder="..."> at five o'clock because I couldn't sleep.</p>
+
+                        <p><strong>J:</strong> Did you <input type="text" class="fill-blank" id="int5" placeholder="..."> special food? Did you have a special diet?</p>
+
+                        <p><strong>C:</strong> No, I didn't. I <input type="text" class="fill-blank" id="int6" placeholder="..."> my normal food, with my family every day.</p>
+
+                        <p><strong>J:</strong> Did your family <input type="text" class="fill-blank" id="int7" placeholder="..."> the race?</p>
+
+                        <p><strong>C:</strong> No, they didn't. They <input type="text" class="fill-blank" id="int8" placeholder="..."> to Nairobi. We <input type="text" class="fill-blank" id="int9" placeholder="..."> the money for that. They <input type="text" class="fill-blank" id="int10" placeholder="..."> in the village. I <input type="text" class="fill-blank" id="int11" placeholder="..."> to them on the phone after the race.</p>
+                    </div>
+
+                    <button class="check-btn" onclick="checkInterview()">Check Answers</button>
+                    <div class="score-display" id="intScore"></div>
+                </div>
+
+                <div class="info-box success">
+                    <h4>Grammar Tip: Time Expressions</h4>
+                    <ul style="margin-left: 2rem;">
+                        <li>Use <strong>in</strong> with years and months: <em>in 2006, in July</em> <button class="speaker-btn" onclick="playAudio('time_in')">🔊</button></li>
+                        <li>Use <strong>on</strong> with days: <em>on Monday, on Sunday</em> <button class="speaker-btn" onclick="playAudio('time_on')">🔊</button></li>
+                        <li>Use <strong>at</strong> with times: <em>at seven o'clock, at 8.15</em> <button class="speaker-btn" onclick="playAudio('time_at')">🔊</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2.2: CREATIVE LIVES (Frida Kahlo) -->
+        <div class="section" id="creative">
+            <div class="card">
+                <h2><span class="emoji">🎨</span> 2.2 CREATIVE LIVES</h2>
+
+                <h3>Reading: Frida Kahlo (1907–1954)</h3>
+                <div class="reading-text">
+                    <p><strong>Introduction:</strong> Frida Kahlo was a Mexican painter. Her colourful paintings show her powerful feelings about herself and the world around her. Some of her recent fans include Madonna and Robert de Niro. <button class="speaker-btn" onclick="playAudio('frida_intro')">🔊</button></p>
+
+                    <h4 style="color: var(--primary-color); margin-top: 1.5rem;">Life</h4>
+                    <p>Her life began and ended in Mexico City. When Kahlo was six years old, she had a serious disease (polio) that damaged her right leg forever. However, she was a clever and determined young woman and went to one of the top schools in Mexico. <button class="speaker-btn" onclick="playAudio('frida_life1')">🔊</button></p>
+
+                    <p>When she was fifteen, she met the famous painter Diego Rivera. He was doing a painting on a wall at her school at that time. Then, at the age of eighteen, Kahlo was in a terrible accident. She was travelling on a bus when a tram crashed into it. <button class="speaker-btn" onclick="playAudio('frida_life2')">🔊</button></p>
+
+                    <p>She began to paint while she was recovering from the accident because she was bored in bed. During the rest of her life she had over 30 operations to try to correct her physical problems. <button class="speaker-btn" onclick="playAudio('frida_life3')">🔊</button></p>
+
+                    <p>In 1929, she married Diego Rivera but their relationship was often stormy. Soon after she got married, Kahlo started to wear traditional Mexican clothes and jewellery, and she also started to wear her hair high on her head. <button class="speaker-btn" onclick="playAudio('frida_life4')">🔊</button></p>
+
+                    <p>She visited the United States and France, and met many important people. While she was staying in Paris, she appeared on the front cover of Vogue magazine. When she wasn't working, she liked singing and telling jokes at parties. <button class="speaker-btn" onclick="playAudio('frida_life5')">🔊</button></p>
+
+                    <h4 style="color: var(--primary-color); margin-top: 1.5rem;">Work</h4>
+                    <p>Kahlo produced about 200 works in her life. Many of them were self-portraits – a mixture of dreams and reality. In them, we can see that she was very proud of Mexico. <button class="speaker-btn" onclick="playAudio('frida_work1')">🔊</button></p>
+
+                    <p>Her paintings also tell us about politics, power relationships between rich and poor countries, Eastern and Western philosophy and the position of women in society. Many people admired her work, including Pablo Picasso. <button class="speaker-btn" onclick="playAudio('frida_work2')">🔊</button></p>
+                </div>
+
+                <h3><span class="emoji">❓</span> Exercise 2b: True or False?</h3>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. Frida Kahlo had a good education.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="tf1" value="true"> True</label>
+                            <label class="quiz-option"><input type="radio" name="tf1" value="false"> False</label>
+                            <label class="quiz-option"><input type="radio" name="tf1" value="ns"> Not Say</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>2. She had two very bad experiences when she was young.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="tf2" value="true"> True</label>
+                            <label class="quiz-option"><input type="radio" name="tf2" value="false"> False</label>
+                            <label class="quiz-option"><input type="radio" name="tf2" value="ns"> Not Say</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>3. She was on a tram when a bus crashed into it.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="tf3" value="true"> True</label>
+                            <label class="quiz-option"><input type="radio" name="tf3" value="false"> False</label>
+                            <label class="quiz-option"><input type="radio" name="tf3" value="ns"> Not Say</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>4. She started painting when she met Diego Rivera.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="tf4" value="true"> True</label>
+                            <label class="quiz-option"><input type="radio" name="tf4" value="false"> False</label>
+                            <label class="quiz-option"><input type="radio" name="tf4" value="ns"> Not Say</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>5. She travelled a lot in Mexico.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="tf5" value="true"> True</label>
+                            <label class="quiz-option"><input type="radio" name="tf5" value="false"> False</label>
+                            <label class="quiz-option"><input type="radio" name="tf5" value="ns"> Not Say</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>6. People didn't think that she was a talented painter.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="tf6" value="true"> True</label>
+                            <label class="quiz-option"><input type="radio" name="tf6" value="false"> False</label>
+                            <label class="quiz-option"><input type="radio" name="tf6" value="ns"> Not Say</label>
+                        </div>
+                    </div>
+                    <button class="check-btn" onclick="checkTrueFalse()">Check Answers</button>
+                    <div class="score-display" id="tfScore"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="emoji">📖</span> Grammar: Past Continuous</h3>
+                <div class="info-box tip">
+                    <p><strong>We use the past continuous to talk about a longer background action in the past, when a shorter action interrupts it or happens during it.</strong></p>
+                    <p style="margin-top: 1rem;">We use the <strong>past simple</strong> for the shorter action.</p>
+                    <p style="margin-top: 1rem;">Examples:</p>
+                    <ul style="margin-left: 2rem;">
+                        <li>She <strong>was travelling</strong> on a bus when a tram <strong>crashed</strong> into it. <button class="speaker-btn" onclick="playAudio('past_cont_ex1')">🔊</button></li>
+                        <li>She began to paint while she <strong>was recovering</strong> from the accident. <button class="speaker-btn" onclick="playAudio('past_cont_ex2')">🔊</button></li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Form:</strong> was/were + verb-ing</p>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise 5: Complete the Texts</h3>
+                <div class="quiz-container">
+                    <div class="info-box warning">
+                        <strong>Instructions:</strong> Use the past continuous or past simple of the verbs.
+                    </div>
+
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 10px; line-height: 2;">
+                        <h4 style="color: var(--primary-color);">A. John Lennon</h4>
+                        <p><strong>John Lennon</strong> was an inspirational British musician from Liverpool and in the most famous pop group of all time – The Beatles.</p>
+                        <p>In 1980, he <input type="text" class="fill-blank" id="pc1" placeholder="return"> (return) to his home in New York when someone <input type="text" class="fill-blank" id="pc2" placeholder="shoot"> (shoot) and <input type="text" class="fill-blank" id="pc3" placeholder="kill"> (kill) him.</p>
+
+                        <h4 style="color: var(--primary-color); margin-top: 2rem;">B. Hassan Fathy</h4>
+                        <p><strong>Hassan Fathy</strong> was an important Egyptian architect.</p>
+                        <p>He <input type="text" class="fill-blank" id="pc4" placeholder="design"> (design) his first building in the 1930s, when he <input type="text" class="fill-blank" id="pc5" placeholder="teach"> (teach) at the Faculty of Fine Arts in Cairo. He <input type="text" class="fill-blank" id="pc6" placeholder="build"> (build) modern houses in the traditional Egyptian style.</p>
+
+                        <h4 style="color: var(--primary-color); margin-top: 2rem;">C. Junichiro Tanizaki</h4>
+                        <p><strong>Junichiro Tanizaki</strong> was a Japanese writer. He <input type="text" class="fill-blank" id="pc7" placeholder="write"> (write) about Japanese culture and the influence of western countries on Japan.</p>
+                        <p>In 1923, when he <input type="text" class="fill-blank" id="pc8" placeholder="live"> (live) in Tokyo, a great earthquake <input type="text" class="fill-blank" id="pc9" placeholder="destroy"> (destroy) his home and he <input type="text" class="fill-blank" id="pc10" placeholder="move"> (move) to Osaka.</p>
+                    </div>
+
+                    <button class="check-btn" onclick="checkPastContinuous()">Check Answers</button>
+                    <div class="score-display" id="pcScore"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2.3: SCENARIO (Sharing a Flat) -->
+        <div class="section" id="scenario">
+            <div class="card">
+                <h2><span class="emoji">🏠</span> 2.3 SCENARIO: Sharing a Flat</h2>
+
+                <h3>Vocabulary: Opposite Adjectives</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Adjective</th>
+                            <th>Opposite</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>polite</strong></td>
+                            <td>rude</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_polite_rude')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>friendly</strong></td>
+                            <td>unfriendly</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_friendly_unfriendly')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>confident</strong></td>
+                            <td>shy</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_confident_shy')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>nice</strong></td>
+                            <td>horrible</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_nice_horrible')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>cheerful</strong></td>
+                            <td>miserable</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_cheerful_miserable')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>hard-working</strong></td>
+                            <td>lazy</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_hardworking_lazy')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>clever</strong></td>
+                            <td>stupid</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_clever_stupid')">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>chatty</strong></td>
+                            <td>quiet</td>
+                            <td><button class="speaker-btn" onclick="playAudio('opposites_chatty_quiet')">🔊</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3><span class="emoji">🗣️</span> Key Language: Describing People</h3>
+                <div class="info-box tip">
+                    <h4>Important Questions:</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li><strong>What's he like?</strong> <button class="speaker-btn" onclick="playAudio('describe_question1')">🔊</button> → Personality (He's friendly, He seems honest)</li>
+                        <li><strong>What does he look like?</strong> <button class="speaker-btn" onclick="playAudio('describe_question2')">🔊</button> → Appearance (He's got short hair, He looks smart)</li>
+                        <li><strong>What is he like?</strong> <button class="speaker-btn" onclick="playAudio('describe_question3')">🔊</button> → Interests (He likes cooking, He enjoys sport)</li>
+                        <li><strong>Would you like to live with him?</strong> <button class="speaker-btn" onclick="playAudio('describe_question4')">🔊</button> → Opinion</li>
+                    </ul>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise: Match Opposites</h3>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. polite ↔</h4>
+                        <select class="fill-blank" id="opp1" style="min-width: 150px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="c">rude</option>
+                            <option value="e">unfriendly</option>
+                            <option value="a">shy</option>
+                            <option value="b">horrible</option>
+                            <option value="d">miserable</option>
+                            <option value="h">lazy</option>
+                            <option value="f">stupid</option>
+                            <option value="g">quiet</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>2. friendly ↔</h4>
+                        <select class="fill-blank" id="opp2" style="min-width: 150px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="c">rude</option>
+                            <option value="e">unfriendly</option>
+                            <option value="a">shy</option>
+                            <option value="b">horrible</option>
+                            <option value="d">miserable</option>
+                            <option value="h">lazy</option>
+                            <option value="f">stupid</option>
+                            <option value="g">quiet</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>3. confident ↔</h4>
+                        <select class="fill-blank" id="opp3" style="min-width: 150px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="c">rude</option>
+                            <option value="e">unfriendly</option>
+                            <option value="a">shy</option>
+                            <option value="b">horrible</option>
+                            <option value="d">miserable</option>
+                            <option value="h">lazy</option>
+                            <option value="f">stupid</option>
+                            <option value="g">quiet</option>
+                        </select>
+                    </div>
+                    <div class="quiz-question">
+                        <h4>4. nice ↔</h4>
+                        <select class="fill-blank" id="opp4" style="min-width: 150px; padding: 0.5rem;">
+                            <option value="">Choose...</option>
+                            <option value="c">rude</option>
+                            <option value="e">unfriendly</option>
+                            <option value="a">shy</option>
+                            <option value="b">horrible</option>
+                            <option value="d">miserable</option>
+                            <option value="h">lazy</option>
+                            <option value="f">stupid</option>
+                            <option value="g">quiet</option>
+                        </select>
+                    </div>
+                    <button class="check-btn" onclick="checkOpposites()">Check Answers</button>
+                    <div class="score-display" id="oppScore"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="emoji">💬</span> Speaking Task: Describe Someone</h3>
+                <div class="quiz-container">
+                    <p><strong>Think of someone you know (a friend or family member).</strong> Write notes to answer these questions:</p>
+
+                    <div style="line-height: 2.5;">
+                        <p><strong>1. What's his/her name?</strong></p>
+                        <input type="text" class="fill-blank" id="desc1" placeholder="Name" style="width: 80%; min-width: 300px;">
+
+                        <p style="margin-top: 1rem;"><strong>2. What's he/she like? (personality)</strong></p>
+                        <textarea id="desc2" placeholder="e.g., friendly, kind, hard-working..." style="min-height: 80px;"></textarea>
+
+                        <p style="margin-top: 1rem;"><strong>3. What does he/she look like? (appearance)</strong></p>
+                        <textarea id="desc3" placeholder="e.g., tall, short brown hair, blue eyes..." style="min-height: 80px;"></textarea>
+
+                        <p style="margin-top: 1rem;"><strong>4. What does he/she like doing?</strong></p>
+                        <textarea id="desc4" placeholder="e.g., playing football, reading books, cooking..." style="min-height: 80px;"></textarea>
+                    </div>
+
+                    <button class="submit-btn" onclick="saveDescription()">Save My Description</button>
+                    <div class="score-display" id="descMessage"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2.4: STUDY AND WRITING SKILLS -->
+        <div class="section" id="study">
+            <div class="card">
+                <h2><span class="emoji">📚</span> 2.4 STUDY AND WRITING SKILLS</h2>
+
+                <h3>Learning Styles Questionnaire</h3>
+                <div class="info-box warning">
+                    <p><strong>Everyone learns in different ways.</strong> Do this questionnaire to find out your learning style.</p>
+                    <p style="margin-top: 0.5rem;">Give each statement a mark out of 5:</p>
+                    <ul style="margin-left: 2rem;">
+                        <li><strong>5</strong> = Yes, a lot / Always</li>
+                        <li><strong>4</strong> = Usually / Often</li>
+                        <li><strong>3</strong> = Sometimes</li>
+                        <li><strong>2</strong> = Rarely / Not much</li>
+                        <li><strong>1</strong> = Never / Not at all</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <h4 style="color: var(--primary-color);">Category A: Visual Learner</h4>
+
+                    <div class="quiz-question">
+                        <p>1. Can you remember any of the photos in Unit 1 of this course book?</p>
+                        <select class="fill-blank" id="ls1" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Do you find it easy to understand charts and diagrams?</p>
+                        <select class="fill-blank" id="ls2" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. To remember the spelling of a word, do you write it down several times?</p>
+                        <select class="fill-blank" id="ls3" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>4. Can you find mistakes in your own writing?</p>
+                        <select class="fill-blank" id="ls4" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>5. Are you good at using maps?</p>
+                        <select class="fill-blank" id="ls5" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>6. Have you got a good memory for people's faces?</p>
+                        <select class="fill-blank" id="ls6" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>7. When you get a new piece of equipment (e.g. a DVD player), do you read the instruction book carefully?</p>
+                        <select class="fill-blank" id="ls7" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>8. When you were a child, did you enjoy reading books in your free time?</p>
+                        <select class="fill-blank" id="ls8" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <h4 style="color: var(--primary-color); margin-top: 2rem;">Category B: Auditory Learner</h4>
+
+                    <div class="quiz-question">
+                        <p>9. Do you enjoy discussions about the subjects you are studying?</p>
+                        <select class="fill-blank" id="ls9" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>10. Do you enjoy listening to lectures and talks?</p>
+                        <select class="fill-blank" id="ls10" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>11. To remember the spelling of a word, do you say the letters aloud?</p>
+                        <select class="fill-blank" id="ls11" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>12. Is it difficult for you to study in a noisy place?</p>
+                        <select class="fill-blank" id="ls12" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>13. Do you enjoy listening to books on CD?</p>
+                        <select class="fill-blank" id="ls13" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>14. When you think of a phone number, do you hear the numbers in your head?</p>
+                        <select class="fill-blank" id="ls14" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>15. When people tell you their names, do you remember them easily?</p>
+                        <select class="fill-blank" id="ls15" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>16. When you were a child, did you like listening to stories?</p>
+                        <select class="fill-blank" id="ls16" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <h4 style="color: var(--primary-color); margin-top: 2rem;">Category C: Kinesthetic Learner</h4>
+
+                    <div class="quiz-question">
+                        <p>17. Do you learn best by doing things rather than reading about them?</p>
+                        <select class="fill-blank" id="ls17" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>18. Do you like doing experiments (e.g. in a laboratory)?</p>
+                        <select class="fill-blank" id="ls18" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>19. Do you enjoy role-plays?</p>
+                        <select class="fill-blank" id="ls19" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>20. Is it difficult for you to study when there are many things happening around you?</p>
+                        <select class="fill-blank" id="ls20" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>21. Do you move your hands a lot when you're talking?</p>
+                        <select class="fill-blank" id="ls21" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>22. When you get a new piece of equipment (e.g. a DVD player), do you ignore the instruction book?</p>
+                        <select class="fill-blank" id="ls22" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>23. In your free time, do you like doing things with your hands (e.g. painting)?</p>
+                        <select class="fill-blank" id="ls23" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>24. When you were a child, did you do a lot of physical activity in your free time?</p>
+                        <select class="fill-blank" id="ls24" style="min-width: 100px; padding: 0.5rem;">
+                            <option value="">...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <button class="check-btn" onclick="calculateLearningStyle()">Calculate My Learning Style</button>
+                    <div class="score-display" id="lsResult"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><span class="emoji">📔</span> Writing Skills: Keeping a Learning Diary</h3>
+                <div class="info-box success">
+                    <p>It is a good idea when you are studying English to keep a learning diary. Writing makes our thoughts and feelings clearer. It gives us thinking time and helps us to organise our ideas.</p>
+                    <p style="margin-top: 0.5rem;">It also helps us to make plans and to see our progress and development. Writing about our learning can help us become better learners.</p>
+                </div>
+
+                <h4>Example Diary Entries</h4>
+                <div class="reading-text">
+                    <h4 style="color: var(--primary-color);">Thursday 20th October</h4>
+                    <p>This morning we learned how to use phrases like <em>So do I</em> and <em>Neither do I</em>. Jane's a good teacher. She explained everything well and in the class I understood perfectly. Now, I'm not so sure! I need to look at the lesson again tomorrow – perhaps with my classmate Gozem – she's really clever and helpful! I'm glad I decided to come to this school (the teachers and students are great) and at the moment I'm very happy here.</p>
+
+                    <h4 style="color: var(--primary-color); margin-top: 1.5rem;">Friday 21st October</h4>
+                    <p>Today I had lunch with some of my classmates and we spoke a lot of English! Afterwards, Gozem and I studied together and she helped me with the homework. I now realise that I enjoy working with other people like this – it's fun and I learn better than on my own.</p>
+
+                    <h4 style="color: var(--primary-color); margin-top: 1.5rem;">Sunday 23rd October</h4>
+                    <p>I think my listening is getting better. I had a lot of trouble with it until I came here. This evening I watched a film in English on TV. At first, I didn't understand much, but then I started to understand what the people were saying. I wrote down some of the expressions they used in my vocabulary book.</p>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Linkers Exercise</h3>
+                <div class="quiz-container">
+                    <div class="info-box tip">
+                        <p><strong>Linkers:</strong> at first, then, at the moment, until, afterwards</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>1. <select class="fill-blank" id="link1" style="min-width: 120px;"><option value="">...</option><option value="at first">At first</option><option value="at the moment">At the moment</option><option value="until">Until</option><option value="then">Then</option></select> I couldn't do the homework, but <select class="fill-blank" id="link2" style="min-width: 120px;"><option value="">...</option><option value="at first">at first</option><option value="at the moment">at the moment</option><option value="until">until</option><option value="then">then</option></select> a friend explained how to do it.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. <select class="fill-blank" id="link3" style="min-width: 120px;"><option value="">...</option><option value="At first">At first</option><option value="At the moment">At the moment</option><option value="Until">Until</option><option value="Then">Then</option></select> I was shy and didn't ask any questions. <select class="fill-blank" id="link4" style="min-width: 120px;"><option value="">...</option><option value="At first">At first</option><option value="At the moment">At the moment</option><option value="Then">Then</option></select> I became more confident.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. I'm enjoying my new course in this country <select class="fill-blank" id="link5" style="min-width: 120px;"><option value="">...</option><option value="at first">at first</option><option value="at the moment">at the moment</option><option value="until">until</option></select>.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>4. I didn't use an English–English dictionary <select class="fill-blank" id="link6" style="min-width: 120px;"><option value="">...</option><option value="at first">at first</option><option value="then">then</option><option value="until">until</option></select> but <select class="fill-blank" id="link7" style="min-width: 120px;"><option value="">...</option><option value="at first">at first</option><option value="then">then</option><option value="at the moment">at the moment</option></select> I realised that it was better.</p>
+                    </div>
+
+                    <button class="check-btn" onclick="checkLinkers()">Check Answers</button>
+                    <div class="score-display" id="linkScore"></div>
+                </div>
+
+                <h3><span class="emoji">✍️</span> Your Learning Diary</h3>
+                <div class="quiz-container">
+                    <p><strong>Start your own learning diary.</strong> Write about 100 words about your English learning experience.</p>
+                    <p>You can write about:</p>
+                    <ul style="margin-left: 2rem;">
+                        <li>Your feelings about the course/coursebook</li>
+                        <li>Things you find difficult</li>
+                        <li>Things you can do to help you learn</li>
+                        <li>Things you learn about yourself</li>
+                    </ul>
+
+                    <textarea id="diary" placeholder="Write your learning diary entry here...&#10;&#10;Example:&#10;&#10;Today I learned about past simple and past continuous. At first, it was confusing, but then I understood the difference. I find it easy to remember regular verbs, but irregular verbs are difficult for me..." style="min-height: 200px;"></textarea>
+
+                    <button class="submit-btn" onclick="saveDiary()">Save My Diary Entry</button>
+                    <div class="score-display" id="diaryMessage"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Final Quiz -->
+        <div class="section" id="quiz">
+            <div class="card">
+                <h2><span class="emoji">✅</span> Final Quiz</h2>
+                <p style="margin-bottom: 2rem;">Test your knowledge of Unit 2: People!</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. "She ___ to the shop yesterday." (past simple)</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final1" value="a"> go</label>
+                            <label class="quiz-option"><input type="radio" name="final1" value="b"> went</label>
+                            <label class="quiz-option"><input type="radio" name="final1" value="c"> was going</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. "While I ___ TV, the phone rang."</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final2" value="a"> watched</label>
+                            <label class="quiz-option"><input type="radio" name="final2" value="b"> was watching</label>
+                            <label class="quiz-option"><input type="radio" name="final2" value="c"> watch</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. Which adjective means "wanting to succeed"?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final3" value="a"> determined</label>
+                            <label class="quiz-option"><input type="radio" name="final3" value="b"> helpful</label>
+                            <label class="quiz-option"><input type="radio" name="final3" value="c"> lovely</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>4. What's the opposite of "friendly"?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final4" value="a"> rude</label>
+                            <label class="quiz-option"><input type="radio" name="final4" value="b"> unfriendly</label>
+                            <label class="quiz-option"><input type="radio" name="final4" value="c"> shy</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>5. We use "___ " with years and months.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final5" value="a"> in</label>
+                            <label class="quiz-option"><input type="radio" name="final5" value="b"> on</label>
+                            <label class="quiz-option"><input type="radio" name="final5" value="c"> at</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>6. "What does he look like?" asks about ___</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final6" value="a"> personality</label>
+                            <label class="quiz-option"><input type="radio" name="final6" value="b"> appearance</label>
+                            <label class="quiz-option"><input type="radio" name="final6" value="c"> interests</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>7. Which is a regular past simple verb?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final7" value="a"> went</label>
+                            <label class="quiz-option"><input type="radio" name="final7" value="b"> trained</label>
+                            <label class="quiz-option"><input type="radio" name="final7" value="c"> left</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>8. "At first" means ___</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="final8" value="a"> in the beginning</label>
+                            <label class="quiz-option"><input type="radio" name="final8" value="b"> at the end</label>
+                            <label class="quiz-option"><input type="radio" name="final8" value="c"> right now</label>
+                        </div>
+                    </div>
+
+                    <button class="check-btn" onclick="checkFinalQuiz()">Submit Quiz</button>
+                    <div class="score-display" id="finalScore"></div>
+                </div>
+
+                <div class="info-box success" style="margin-top: 2rem; display: none;" id="congratulations">
+                    <h3>🎉 Congratulations!</h3>
+                    <p>You've completed Unit 2: People! Great job!</p>
+                    <p style="margin-top: 1rem;">Keep practicing your English and continue with the next unit!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="prev-btn" onclick="previousSection()">← Previous</button>
+            <button class="next-btn" onclick="nextSection()">Next →</button>
+        </div>
+    </div>
+
+    <!-- Include shared JavaScript -->
+    <script src="lesson.js"></script>
+
+    <!-- Lesson-specific JavaScript -->
+    <script>
+        // Initialize lesson
+        const sections = ['intro', 'inspiration', 'creative', 'scenario', 'study', 'quiz'];
+        document.addEventListener('DOMContentLoaded', function() {
+            LessonFramework.init(sections);
+        });
+
+        // Exercise checking functions
+        function checkComprehension() {
+            const answers = {
+                comp1: ['housewife', 'mother'],
+                comp2: ['professional athlete', 'marathon runner', 'athlete'],
+                comp3: ['pay for children education', 'children education', 'education'],
+                comp4: ['hero', 'inspirational', 'determined', 'dedicated', 'talented']
+            };
+            LessonFramework.checkFillInBlanks(answers, 'compScore');
+        }
+
+        function checkVocabExercise() {
+            const answers = { vocab1: 'a', vocab2: 'a', vocab3: 'c', vocab4: 'b' };
+            LessonFramework.checkMultipleChoice(answers, 'vocabScore');
+        }
+
+        function checkMatching() {
+            const answers = { match1: 'a', match2: 'c', match3: 'd', match4: 'b' };
+            LessonFramework.checkDropdowns(answers, 'matchScore');
+        }
+
+        function checkInterview() {
+            const answers = {
+                int1: 'trained',
+                int2: 'ran',
+                int3: 'was',
+                int4: 'got up',
+                int5: 'eat',
+                int6: 'ate',
+                int7: 'watch',
+                int8: ['did not come', 'didn\'t come'],
+                int9: ['did not have', 'didn\'t have'],
+                int10: 'stayed',
+                int11: 'spoke'
+            };
+            LessonFramework.checkFillInBlanks(answers, 'intScore');
+        }
+
+        function checkTrueFalse() {
+            const answers = { tf1: 'true', tf2: 'true', tf3: 'false', tf4: 'false', tf5: 'ns', tf6: 'false' };
+            LessonFramework.checkMultipleChoice(answers, 'tfScore');
+        }
+
+        function checkPastContinuous() {
+            const answers = {
+                pc1: 'was returning',
+                pc2: 'shot',
+                pc3: 'killed',
+                pc4: 'designed',
+                pc5: 'was teaching',
+                pc6: 'built',
+                pc7: 'wrote',
+                pc8: 'was living',
+                pc9: 'destroyed',
+                pc10: 'moved'
+            };
+            LessonFramework.checkFillInBlanks(answers, 'pcScore');
+        }
+
+        function checkOpposites() {
+            const answers = { opp1: 'c', opp2: 'e', opp3: 'a', opp4: 'b' };
+            LessonFramework.checkDropdowns(answers, 'oppScore');
+        }
+
+        function saveDescription() {
+            const name = document.getElementById('desc1').value;
+            const personality = document.getElementById('desc2').value;
+            const appearance = document.getElementById('desc3').value;
+            const likes = document.getElementById('desc4').value;
+
+            if (name.length > 0 && personality.length > 20 && appearance.length > 20 && likes.length > 20) {
+                document.getElementById('descMessage').innerHTML = '<h3>✅ Excellent!</h3><p>Your description has been saved!</p>';
+                document.getElementById('descMessage').classList.add('show');
+            } else {
+                alert('Please fill in all fields with sufficient detail (at least 20 characters each).');
+            }
+        }
+
+        function calculateLearningStyle() {
+            let scoreA = 0, scoreB = 0, scoreC = 0;
+
+            // Calculate scores for each category
+            for (let i = 1; i <= 8; i++) {
+                scoreA += parseInt(document.getElementById(`ls${i}`).value || 0);
+            }
+            for (let i = 9; i <= 16; i++) {
+                scoreB += parseInt(document.getElementById(`ls${i}`).value || 0);
+            }
+            for (let i = 17; i <= 24; i++) {
+                scoreC += parseInt(document.getElementById(`ls${i}`).value || 0);
+            }
+
+            let result = '';
+            let style = '';
+            const maxScore = Math.max(scoreA, scoreB, scoreC);
+
+            if (maxScore === scoreA) {
+                style = 'Visual Learner';
+                result = `<h3>📸 You are a VISUAL LEARNER!</h3>
+                <p><strong>Your Score:</strong> Category A = ${scoreA}, Category B = ${scoreB}, Category C = ${scoreC}</p>
+                <p style="margin-top: 1rem;">You learn best through seeing and reading. Tips for you:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Use pictures, diagrams, and mind maps</li>
+                    <li>Write things down to remember them</li>
+                    <li>Use colorful notes and highlighters</li>
+                    <li>Watch videos and look at visual materials</li>
+                </ul>`;
+            } else if (maxScore === scoreB) {
+                style = 'Auditory Learner';
+                result = `<h3>🎧 You are an AUDITORY LEARNER!</h3>
+                <p><strong>Your Score:</strong> Category A = ${scoreA}, Category B = ${scoreB}, Category C = ${scoreC}</p>
+                <p style="margin-top: 1rem;">You learn best through listening and speaking. Tips for you:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Listen to podcasts and audio books</li>
+                    <li>Discuss topics with others</li>
+                    <li>Read aloud to yourself</li>
+                    <li>Use songs and rhymes to remember things</li>
+                </ul>`;
+            } else {
+                style = 'Kinesthetic Learner';
+                result = `<h3>🏃 You are a KINESTHETIC LEARNER!</h3>
+                <p><strong>Your Score:</strong> Category A = ${scoreA}, Category B = ${scoreB}, Category C = ${scoreC}</p>
+                <p style="margin-top: 1rem;">You learn best through doing and moving. Tips for you:</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Do experiments and practical activities</li>
+                    <li>Take breaks to move around</li>
+                    <li>Use role-plays and simulations</li>
+                    <li>Make models or use hands-on materials</li>
+                </ul>`;
+            }
+
+            document.getElementById('lsResult').innerHTML = result;
+            document.getElementById('lsResult').classList.add('show');
+        }
+
+        function checkLinkers() {
+            const answers = {
+                link1: 'at first', link2: 'then', link3: 'At first',
+                link4: 'Then', link5: 'at the moment', link6: 'at first', link7: 'then'
+            };
+            LessonFramework.checkDropdowns(answers, 'linkScore');
+        }
+
+        function saveDiary() {
+            LessonFramework.saveTextarea('diary', 'diaryMessage', 100, 'Your learning diary entry has been saved! Keep writing regularly to track your progress.');
+        }
+
+        function checkFinalQuiz() {
+            const answers = {
+                final1: 'b', final2: 'b', final3: 'a', final4: 'b',
+                final5: 'a', final6: 'b', final7: 'b', final8: 'a'
+            };
+            const score = LessonFramework.checkMultipleChoice(answers, 'finalScore');
+            if (score === 8) {
+                setTimeout(() => {
+                    document.getElementById('congratulations').style.display = 'block';
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

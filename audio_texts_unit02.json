@@ -1,0 +1,67 @@
+{
+  "housewife_story": {
+    "sentence1": "Yesterday, Chimokel Chilapong, a Kenyan housewife and mother of four, beat hundreds of professional athletes and won the Nairobi marathon and $12,000.",
+    "sentence2": "This was her first marathon race and she ran it in 2 hours, 39 minutes and 9 seconds. The other runners included professionals such as Joyce Chepchumba, the three times winner of the London marathon.",
+    "sentence3": "Chimokel only started running a year ago, in April, to pay for her children's education. Now, in Kenya, she is a hero and an inspirational person.",
+    "sentence4": "People think she is a determined woman, a dedicated mother and a talented person. Next week, there is a party in her honour."
+  },
+  "personality": {
+    "dedicated": "dedicated",
+    "determined": "determined",
+    "friendly": "friendly",
+    "hardworking": "hard-working",
+    "helpful": "helpful",
+    "inspirational": "inspirational",
+    "kind": "kind",
+    "lovely": "lovely",
+    "patient": "patient",
+    "talented": "talented"
+  },
+  "personality_def": {
+    "dedicated": "Working hard at something because it's very important to you",
+    "determined": "Having a strong desire to succeed",
+    "friendly": "Behaving in a kind and pleasant way",
+    "hardworking": "Putting a lot of effort into your job",
+    "helpful": "Always ready to help other people",
+    "inspirational": "Making people want to achieve something",
+    "kind": "Caring about others and being generous",
+    "lovely": "Very attractive or beautiful",
+    "patient": "Able to wait calmly for a long time",
+    "talented": "Having a natural ability to do something well"
+  },
+  "time": {
+    "in": "Use in with years and months: in 2006, in July",
+    "on": "Use on with days: on Monday, on Sunday",
+    "at": "Use at with times: at seven o'clock, at 8.15"
+  },
+  "frida": {
+    "intro": "Frida Kahlo was a Mexican painter. Her colourful paintings show her powerful feelings about herself and the world around her. Some of her recent fans include Madonna and Robert de Niro.",
+    "life1": "Her life began and ended in Mexico City. When Kahlo was six years old, she had a serious disease (polio) that damaged her right leg forever. However, she was a clever and determined young woman and went to one of the top schools in Mexico.",
+    "life2": "When she was fifteen, she met the famous painter Diego Rivera. He was doing a painting on a wall at her school at that time. Then, at the age of eighteen, Kahlo was in a terrible accident. She was travelling on a bus when a tram crashed into it.",
+    "life3": "She began to paint while she was recovering from the accident because she was bored in bed. During the rest of her life she had over 30 operations to try to correct her physical problems.",
+    "life4": "In 1929, she married Diego Rivera but their relationship was often stormy. Soon after she got married, Kahlo started to wear traditional Mexican clothes and jewellery, and she also started to wear her hair high on her head.",
+    "life5": "She visited the United States and France, and met many important people. While she was staying in Paris, she appeared on the front cover of Vogue magazine. When she wasn't working, she liked singing and telling jokes at parties.",
+    "work1": "Kahlo produced about 200 works in her life. Many of them were self-portraits – a mixture of dreams and reality. In them, we can see that she was very proud of Mexico.",
+    "work2": "Her paintings also tell us about politics, power relationships between rich and poor countries, Eastern and Western philosophy and the position of women in society. Many people admired her work, including Pablo Picasso."
+  },
+  "past_cont": {
+    "ex1": "She was travelling on a bus when a tram crashed into it.",
+    "ex2": "She began to paint while she was recovering from the accident."
+  },
+  "opposites": {
+    "polite_rude": "polite, rude",
+    "friendly_unfriendly": "friendly, unfriendly",
+    "confident_shy": "confident, shy",
+    "nice_horrible": "nice, horrible",
+    "cheerful_miserable": "cheerful, miserable",
+    "hardworking_lazy": "hard-working, lazy",
+    "clever_stupid": "clever, stupid",
+    "chatty_quiet": "chatty, quiet"
+  },
+  "describe": {
+    "question1": "What's he like?",
+    "question2": "What does he look like?",
+    "question3": "What is he like?",
+    "question4": "Would you like to live with him?"
+  }
+}
