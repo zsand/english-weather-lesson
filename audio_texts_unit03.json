@@ -1,0 +1,64 @@
+{
+  "media_vocabulary": {
+    "advert": "advert",
+    "article": "article",
+    "celebrity": "celebrity",
+    "comedy": "comedy",
+    "documentary": "documentary",
+    "drama": "drama",
+    "journalist": "journalist",
+    "presenter": "presenter",
+    "producer": "producer",
+    "programme": "programme",
+    "reality_tv_show": "reality TV show",
+    "search_engine": "search engine",
+    "series": "series",
+    "soap_opera": "soap opera",
+    "webcast": "webcast"
+  },
+  "tv_programme_types": {
+    "chat_show": "chat show",
+    "current_affairs": "current affairs programme",
+    "documentary2": "documentary",
+    "drama2": "drama",
+    "game_show": "game show",
+    "nature_programme": "nature programme",
+    "sitcom": "sitcom",
+    "variety_show": "variety show"
+  },
+  "general_media": {
+    "newspaper": "newspaper",
+    "magazine": "magazine",
+    "radio": "radio",
+    "television": "television",
+    "internet": "the Internet",
+    "channel": "channel",
+    "news": "news"
+  },
+  "media_people": {
+    "journalist2": "journalist",
+    "reporter": "reporter",
+    "presenter2": "presenter",
+    "producer2": "producer",
+    "photographer": "photographer",
+    "editor": "editor"
+  },
+  "additional_vocab": {
+    "soap_opera2": "soap opera",
+    "drama3": "drama",
+    "comedy2": "comedy",
+    "documentary3": "documentary",
+    "reality_show": "reality show"
+  },
+  "reading_texts": {
+    "world_news_para1": "The main international broadcasters are BBC World and CNN. With an audience of over 1.5 billion people, these are popular channels that offer good quality news programmes. In both companies, the journalists are experienced writers that produce journalism of a high standard.",
+    "world_news_para2": "However, there are alternative news channels which people watch because they want a less traditional or non-western view on world events. Al Jazeera International is an Arabic television news company that started an English language international channel in 2006. With more than 15 offices and professional journalists all over the world, it says it gives a fresh view on the big stories and it shows the news that we don't normally see.",
+    "world_news_para3": "The Internet offers even more variety. OneWorld is an Internet site which has stories about the developing world and human rights, rather than the usual stories about US politics and business. The writers for this company are often local people who write the stories for free. This non-professional journalism is increasing and it certainly offers more choice.",
+    "world_news_para4": "AllAfrica.com and WNN.com are also Internet news sites, but they don't produce the news stories. Instead, they have links to more than 4,000 news organisations across the world. On sites like these, with a click of the mouse, you select the news that you want to see.",
+    "world_news_para5": "So, next time you are in a hotel room, before you turn on the TV, perhaps you should turn on your laptop and discover the world's news yourself.",
+    "life_on_mars_intro": "The fashion and culture of the 1970s are very popular today, but Life on Mars, a new police series, reminds us what life was really like then.",
+    "life_on_mars_story": "The story is simple. In Manchester, 2006, a car knocks down Detective Chief Inspector Sam Tyler, played by John Simm, while he is looking for a killer. He wakes up in 1973. He is still a police officer in Manchester and he is still looking for the same killer. However, the collar of his shirt is a lot bigger and there aren't any computers in the police station.",
+    "life_on_mars_review": "Life on Mars is an exciting police drama that is part thriller, part comedy. Simm gives a convincing performance as a man who is in shock, and writer Matthew Graham makes sure that there is also plenty of enjoyable comedy.",
+    "groucho_marx_quote": "I find television very educational. Every time someone switches it on, I go into another room and read a good book."
+  }
+}

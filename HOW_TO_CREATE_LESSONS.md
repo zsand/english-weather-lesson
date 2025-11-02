@@ -5,17 +5,21 @@ This guide explains how to create new interactive lessons using the shared frame
 ## 📁 File Structure
 
 ```
-english/
+english-weather-lesson/
+├── index.html                    # Main page - lesson selection
 ├── lesson.css                    # Shared CSS framework (reusable)
 ├── lesson.js                     # Shared JavaScript framework (reusable)
 ├── weather_lesson_complete.html  # Unit 01 HTML
 ├── people_lesson.html            # Unit 02 HTML
-├── audio_texts.json              # Unit 01 audio texts
+├── audio_texts_unit01.json       # Unit 01 audio texts
 ├── audio_texts_unit02.json       # Unit 02 audio texts
-├── generate_audio.py             # Unit 01 audio generator
+├── generate_audio_unit01.py      # Unit 01 audio generator
 ├── generate_audio_unit02.py      # Unit 02 audio generator
-├── audio/                        # Generated audio files
-└── HOW_TO_CREATE_LESSONS.md      # This file
+├── audio/                        # Generated audio files (123 MP3s)
+├── HOW_TO_CREATE_LESSONS.md      # This file
+├── PROJECT_README.md             # Project overview
+├── README.md                     # Repository README
+└── Unit_02_People.md             # Source markdown for Unit 02
 ```
 
 ---
@@ -78,6 +82,61 @@ Copy `generate_audio_unit02.py` and modify:
 - Update the JSON filename
 - Update category names
 - Update the title in print statements
+
+### Step 6: Add to Main Page (index.html)
+
+Add your new lesson to the main page so users can find it:
+
+```html
+<!-- Add this card to the lessons-grid in index.html -->
+<div class="lesson-card" onclick="window.location.href='unit03_lesson.html'">
+    <div class="lesson-icon">🎭</div>
+    <div class="unit-number">Unit 03</div>
+    <h2>Your Topic</h2>
+    <p>Brief description of what students will learn...</p>
+
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number">X</div>
+            <div class="stat-label">Sections</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">X+</div>
+            <div class="stat-label">Questions</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">X</div>
+            <div class="stat-label">Audio Files</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">X+</div>
+            <div class="stat-label">Exercises</div>
+        </div>
+    </div>
+
+    <div class="tags">
+        <span class="tag">Grammar Topic 1</span>
+        <span class="tag">Grammar Topic 2</span>
+        <span class="tag">Key Vocabulary</span>
+    </div>
+
+    <a href="unit03_lesson.html" class="start-btn">Start Learning →</a>
+</div>
+```
+
+Don't forget to update the footer statistics in `index.html`:
+
+```html
+<!-- Update these numbers in the footer -->
+<div class="footer-stat-number">3</div>  <!-- Total units -->
+<div class="footer-stat-label">Complete Units</div>
+
+<div class="footer-stat-number">XXX+</div>  <!-- Total questions -->
+<div class="footer-stat-label">Interactive Questions</div>
+
+<div class="footer-stat-number">XXX</div>  <!-- Total audio -->
+<div class="footer-stat-label">Audio Pronunciations</div>
+```
 
 ---
 
@@ -354,15 +413,58 @@ print("🎙️  GENERATING AUDIO FILES FOR UNIT XX: TITLE")
 
 ### Step 3: Generate Audio
 
+**Important:** If you get an error about "externally-managed-environment", use a virtual environment:
+
 ```bash
+# Check if virtual environment already exists
+ls -la .venv
+
+# If not, create one
+python3 -m venv .venv
+
+# Activate it
+source .venv/bin/activate
+
 # Install dependencies
 pip install openai python-dotenv
 
-# Create .env file with your API key
+# Create .env file with your API key (if not exists)
 echo "OPENAI_API_KEY=your_key_here" > .env
 
 # Run the script
 python3 generate_audio_unitXX.py
+
+# When done, you can deactivate
+deactivate
+```
+
+**Or if .venv already exists:**
+
+```bash
+# Activate virtual environment
+source .venv/bin/activate
+
+# Run the script
+python3 generate_audio_unitXX.py
+```
+
+**Expected output:**
+
+```
+============================================================
+🎙️  GENERATING AUDIO FILES FOR UNIT XX: TITLE
+============================================================
+
+📂 Category Name
+------------------------------------------------------------
+🔊 Generating filename.mp3: "Text..."
+✅ Created filename.mp3
+...
+
+============================================================
+✅ COMPLETE! Generated XX audio files for Unit XX
+📁 Audio files saved in: /path/to/audio
+============================================================
 ```
 
 ---
@@ -553,19 +655,59 @@ Before publishing your lesson:
 
 ## 📱 Deployment
 
+### Step-by-Step: Adding Your New Lesson to Git
+
+```bash
+# 1. Check what changed
+git status
+
+# 2. Add all new files
+git add .
+
+# 3. Commit with descriptive message
+git commit -m "Add Unit 03: Your Topic
+
+- Added Unit 03 lesson with XX+ questions
+- Created XX audio files
+- Updated main page (index.html)
+- Updated README statistics
+- Total: X units, XXX audio files, XXX+ questions"
+
+# 4. Push to GitHub
+git push
+
+# 5. Check your site (if GitHub Pages is enabled)
+# https://your-username.github.io/english-weather-lesson/
+```
+
 ### For GitHub Pages:
 
-1. Create a repository
-2. Upload all files (HTML, CSS, JS, audio/)
-3. Go to Settings → Pages
-4. Select main branch
+1. Go to your repository on GitHub
+2. Settings → Pages
+3. Select **main** branch
+4. Click Save
 5. Your site will be at `https://username.github.io/repo-name/`
+6. Updates automatically on every push!
 
 ### For Vercel/Netlify:
 
 1. Connect your GitHub repository
 2. These platforms auto-deploy on push
 3. No configuration needed!
+4. Get custom domain for free
+
+### Testing Before Deploy
+
+```bash
+# Test locally with Python server
+python3 -m http.server 8000
+
+# Open in browser
+open http://localhost:8000
+
+# Test on mobile devices (same network)
+# Use your computer's IP address: http://192.168.x.x:8000
+```
 
 ---
 
@@ -629,16 +771,92 @@ Test every lesson on:
 
 ---
 
+## 📋 Complete Workflow Checklist
+
+Use this checklist when creating a new lesson from start to finish:
+
+### Phase 1: Planning (30 min)
+- [ ] Choose unit from textbook
+- [ ] Read through all content
+- [ ] List all exercises to include
+- [ ] Plan section structure
+- [ ] Choose emoji for main page
+
+### Phase 2: Content Creation (2-3 hours)
+- [ ] Copy `people_lesson.html` to `unitXX_lesson.html`
+- [ ] Update header (title, quote, emoji)
+- [ ] Create navigation sections
+- [ ] Add all reading texts
+- [ ] Add all exercises (multiple choice, fill-in, etc.)
+- [ ] Add grammar explanations
+- [ ] Add vocabulary cards
+- [ ] Create final quiz
+- [ ] Test all exercises work
+
+### Phase 3: Audio Generation (30 min)
+- [ ] Create `audio_texts_unitXX.json`
+- [ ] List all vocabulary words
+- [ ] List all example sentences
+- [ ] List all reading texts
+- [ ] Copy `generate_audio_unit02.py` to `generate_audio_unitXX.py`
+- [ ] Update JSON filename in script
+- [ ] Update categories list
+- [ ] Update title in print statements
+- [ ] Activate virtual environment
+- [ ] Run audio generation script
+- [ ] Verify all MP3 files created
+
+### Phase 4: Main Page Integration (15 min)
+- [ ] Open `index.html`
+- [ ] Copy lesson card template
+- [ ] Update icon emoji
+- [ ] Update unit number
+- [ ] Update title and description
+- [ ] Update statistics (sections, questions, audio, exercises)
+- [ ] Update tags (grammar topics)
+- [ ] Update footer statistics (total units, questions, audio)
+- [ ] Test card links work
+
+### Phase 5: Testing (30 min)
+- [ ] Open lesson in browser
+- [ ] Test all navigation (pills, arrows, keyboard)
+- [ ] Test all exercises check correctly
+- [ ] Test all audio buttons play
+- [ ] Test on mobile device
+- [ ] Test final quiz
+- [ ] Check all sections accessible
+- [ ] Verify no console errors
+
+### Phase 6: Documentation (15 min)
+- [ ] Update README.md statistics
+- [ ] Document any new features used
+- [ ] Take screenshots (optional)
+- [ ] Write commit message
+
+### Phase 7: Deployment (10 min)
+- [ ] `git status` - check changes
+- [ ] `git add .` - stage all files
+- [ ] `git commit -m "..."` - commit with message
+- [ ] `git push` - deploy to GitHub
+- [ ] Check GitHub Pages updated
+- [ ] Test on live site
+- [ ] Share link with students!
+
+---
+
 ## 🎉 You're Ready!
 
 You now have everything you need to create amazing interactive English lessons!
 
-**Next steps:**
-1. Choose a unit from the textbook
-2. Create the markdown outline
-3. Build the HTML with exercises
-4. Generate audio
-5. Test thoroughly
-6. Share with students!
+**Estimated time per lesson:**
+- First lesson: 4-5 hours
+- Second lesson: 3-4 hours (familiar with process)
+- Third+ lessons: 2-3 hours (faster with experience)
+
+**Tips for efficiency:**
+- Reuse exercise patterns from existing lessons
+- Generate audio in batches
+- Test as you build (don't wait until the end)
+- Use browser DevTools to debug issues quickly
 
 **Happy teaching! 📚✨**

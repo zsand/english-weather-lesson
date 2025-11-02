@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: The Media - Interactive Lesson</title>
+    <link rel="stylesheet" href="lesson.css">
+</head>
+<body>
+    <header>
+        <h1>📺 Unit 3: The Media</h1>
+        <p><button class="speaker-btn" onclick="playAudio('groucho_marx_quote')" style="background: transparent; border: none; cursor: pointer;">🔊</button> "I find television very educational. Every time someone switches it on, I go into another room and read a good book." — Groucho Marx</p>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation Pills -->
+        <div class="nav-pills" id="navPills">
+            <div class="nav-pill active" data-section="intro">📋 Overview</div>
+            <div class="nav-pill" data-section="mymedia">📱 My Media</div>
+            <div class="nav-pill" data-section="worldnews">🌍 World News</div>
+            <div class="nav-pill" data-section="scenario">🎬 Scenario</div>
+            <div class="nav-pill" data-section="study">📚 Study Skills</div>
+            <div class="nav-pill" data-section="grammar">📖 Grammar</div>
+            <div class="nav-pill" data-section="vocab">📝 Vocabulary</div>
+            <div class="nav-pill" data-section="quiz">✅ Final Quiz</div>
+        </div>
+
+        <!-- Section: Overview -->
+        <div class="section active" id="intro">
+            <div class="card">
+                <h2><span class="emoji">🎯</span> Learning Objectives</h2>
+                <p>By the end of this unit, you will be able to:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                    <li>✅ Use articles (a/an, the) correctly</li>
+                    <li>✅ Use relative pronouns (who, which, that)</li>
+                    <li>✅ Talk about different types of media</li>
+                    <li>✅ Understand TV programmes and news companies</li>
+                    <li>✅ Make suggestions and plan a TV programme</li>
+                    <li>✅ Write a TV programme review</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><span class="emoji">🗂️</span> Topics Covered</h2>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>Grammar</h4>
+                        <p>Articles (a/an, the), Relative pronouns (who, which, that)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>Vocabulary</h4>
+                        <p>The media, TV programmes, Nouns (photography/photographer)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>Skills</h4>
+                        <p>Making suggestions, Working with others, Writing reviews</p>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>Scenario</h4>
+                        <p>Planning a TV programme (Fame and Fortune)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3.1: MY MEDIA -->
+        <div class="section" id="mymedia">
+            <div class="card">
+                <h2><span class="emoji">📱</span> 3.1 MY MEDIA</h2>
+
+                <h3>Vocabulary: The Media</h3>
+                <div class="info-box tip">
+                    <p><strong>Exercise 1a:</strong> Put these words into three groups: A for newspapers and magazines, B for television and radio, and C for computers and the Internet. (Some words can go in more than one group.)</p>
+                </div>
+
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>advert <button class="speaker-btn" onclick="playAudio('advert')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">advertisement</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>article <button class="speaker-btn" onclick="playAudio('article')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a piece of writing in a newspaper or magazine</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>celebrity <button class="speaker-btn" onclick="playAudio('celebrity')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a famous person</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>comedy <button class="speaker-btn" onclick="playAudio('comedy')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a funny TV show or film</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>documentary <button class="speaker-btn" onclick="playAudio('documentary')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a film about real events</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>drama <button class="speaker-btn" onclick="playAudio('drama')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a serious TV show or play</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>journalist <button class="speaker-btn" onclick="playAudio('journalist')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">someone who writes for newspapers or TV</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>presenter <button class="speaker-btn" onclick="playAudio('presenter')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a person who introduces a TV or radio show</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>producer <button class="speaker-btn" onclick="playAudio('producer')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">someone who makes TV shows or films</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>programme <button class="speaker-btn" onclick="playAudio('programme')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a TV or radio show</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>reality TV show <button class="speaker-btn" onclick="playAudio('reality_tv_show')">🔊</button></h4>
+                        <div class="type">noun phrase</div>
+                        <div class="meaning">a TV show about real people's lives</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>search engine <button class="speaker-btn" onclick="playAudio('search_engine')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">website for finding information (e.g. Google)</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>series <button class="speaker-btn" onclick="playAudio('series')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">multiple episodes of a TV programme</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>soap opera <button class="speaker-btn" onclick="playAudio('soap_opera')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a continuing TV story about people's lives</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>webcast <button class="speaker-btn" onclick="playAudio('webcast')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a broadcast on the Internet</div>
+                    </div>
+                </div>
+
+                <h3><span class="emoji">❓</span> Exercise 3b: Callum's Media Use</h3>
+                <div class="info-box tip">
+                    <p>Listen to an interview with Callum Robertson from BBC Learning English. Are these sentences true or false?</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. Callum doesn't buy a newspaper every day.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum1" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum1" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. When he cycles to work, he gets one of the free newspapers.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum2" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum2" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. The magazines that he reads are mainly computer magazines.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum3" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum3" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>4. He likes a variety of different TV programmes.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum4" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum4" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>5. He listens to the radio when he's doing other things.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum5" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum5" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>6. He only uses the Internet for business.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum6" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum6" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>7. The physical feeling of holding a newspaper is important for him.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="callum7" value="true"> True
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="callum7" value="false"> False
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="check-btn" onclick="checkCallumQuiz()">Check Answers</button>
+                    <div class="score-display" id="callumScore"></div>
+                </div>
+
+                <h3><span class="emoji">📖</span> Grammar: Articles (a/an, the)</h3>
+
+                <div class="info-box tip">
+                    <h4>Grammar Rules</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Article</th>
+                                <th>When to use</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>a/an</strong></td>
+                                <td>
+                                    - With singular nouns (a person's job)<br>
+                                    - First time mentioning something
+                                </td>
+                                <td>
+                                    Helen is <strong>a</strong> journalist.<br>
+                                    I saw <strong>a</strong> film yesterday.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>the</strong></td>
+                                <td>
+                                    - With singular/plural nouns<br>
+                                    - Talking about a particular thing<br>
+                                    - Second time mentioning something
+                                </td>
+                                <td>
+                                    <strong>The</strong> article is interesting.<br>
+                                    <strong>The</strong> film was great!
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>no article</strong></td>
+                                <td>
+                                    - With plural nouns in general
+                                </td>
+                                <td>
+                                    Newspapers are boring.<br>
+                                    Journalists tell the truth.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise 5b: Complete the TV Advert</h3>
+                <div class="info-box tip">
+                    <p>Complete this description of a TV advert with <strong>a/an</strong> or <strong>the</strong>.</p>
+                </div>
+
+                <div style="background-color: var(--light-bg); padding: 1.5rem; border-radius: 8px; margin-top: 1rem; line-height: 2;">
+                    <p>There's <input type="text" class="fill-blank" id="art1" placeholder="..." style="width: 60px;"> funny advert on <input type="text" class="fill-blank" id="art2" placeholder="..." style="width: 60px;"> TV at the moment. This is what happens. <input type="text" class="fill-blank" id="art3" placeholder="..." style="width: 60px;"> honest-looking man and <input type="text" class="fill-blank" id="art4" placeholder="..." style="width: 60px;"> beautiful woman are getting married.</p>
+
+                    <p><input type="text" class="fill-blank" id="art5" placeholder="..." style="width: 60px;"> woman is wearing <input type="text" class="fill-blank" id="art6" placeholder="..." style="width: 60px;"> expensive wedding dress. <input type="text" class="fill-blank" id="art7" placeholder="..." style="width: 60px;"> man looks very happy. At the last minute, however, <input type="text" class="fill-blank" id="art8" placeholder="..." style="width: 60px;"> woman runs away and <input type="text" class="fill-blank" id="art9" placeholder="..." style="width: 60px;"> man is very surprised.</p>
+
+                    <p>Then we see why. Outside, <input type="text" class="fill-blank" id="art10" placeholder="..." style="width: 60px;"> car is waiting for <input type="text" class="fill-blank" id="art11" placeholder="..." style="width: 60px;"> woman. We realise that <input type="text" class="fill-blank" id="art12" placeholder="..." style="width: 60px;"> woman loves <input type="text" class="fill-blank" id="art13" placeholder="..." style="width: 60px;"> car more than she loves <input type="text" class="fill-blank" id="art14" placeholder="..." style="width: 60px;"> man!</p>
+                </div>
+
+                <button class="check-btn" onclick="checkArticles()" style="margin-top: 1rem;">Check Answers</button>
+                <div class="score-display" id="articlesScore"></div>
+            </div>
+        </div>
+
+        <!-- Section 3.2: WORLD NEWS -->
+        <div class="section" id="worldnews">
+            <div class="card">
+                <h2><span class="emoji">🌍</span> 3.2 WORLD NEWS</h2>
+
+                <h3>Reading: The News Article <button class="speaker-btn" onclick="playAllWorldNews()" style="font-size: 1.2rem;">🔊 Play All</button></h3>
+                <div class="reading-text">
+                    <p><button class="speaker-btn" onclick="playAudio('world_news_para1')">🔊</button> The main international broadcasters are BBC World and CNN. With an audience of over 1.5 billion people, these are popular channels that offer good quality news programmes. In both companies, the journalists are experienced writers that produce journalism of a high standard.</p>
+
+                    <p><button class="speaker-btn" onclick="playAudio('world_news_para2')">🔊</button> However, there are alternative news channels which people watch because they want a less traditional or non-western view on world events. Al Jazeera International is an Arabic television news company that started an English language international channel in 2006. With more than 15 offices and professional journalists all over the world, it says it gives a fresh view on the big stories and it shows the news that we don't normally see.</p>
+
+                    <p><button class="speaker-btn" onclick="playAudio('world_news_para3')">🔊</button> The Internet offers even more variety. OneWorld is an Internet site which has stories about the developing world and human rights, rather than the usual stories about US politics and business. The writers for this company are often local people who write the stories for free. This non-professional journalism is increasing and it certainly offers more choice.</p>
+
+                    <p><button class="speaker-btn" onclick="playAudio('world_news_para4')">🔊</button> AllAfrica.com and WNN.com are also Internet news sites, but they don't produce the news stories. Instead, they have links to more than 4,000 news organisations across the world. On sites like these, with a click of the mouse, you select the news that you want to see.</p>
+
+                    <p><button class="speaker-btn" onclick="playAudio('world_news_para5')">🔊</button> So, next time you are in a hotel room, before you turn on the TV, perhaps you should turn on your laptop and discover the world's news yourself.</p>
+                </div>
+
+                <h3><span class="emoji">❓</span> Exercise 3a: Complete the Sentences</h3>
+                <div class="info-box tip">
+                    <p>Complete these sentences with the names of the news companies in the text.</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. _____ and _____ are traditional, western news broadcasters.</h4>
+                        <input type="text" class="fill-blank" id="news1a" placeholder="First company" style="width: 200px; margin-right: 10px;">
+                        <span>and</span>
+                        <input type="text" class="fill-blank" id="news1b" placeholder="Second company" style="width: 200px; margin-left: 10px;">
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. _____, _____ and _____ are not television companies.</h4>
+                        <input type="text" class="fill-blank" id="news2a" placeholder="First" style="width: 150px; margin-right: 10px;">
+                        <input type="text" class="fill-blank" id="news2b" placeholder="Second" style="width: 150px; margin-right: 10px;">
+                        <input type="text" class="fill-blank" id="news2c" placeholder="Third" style="width: 150px;">
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. _____ and _____ report some different stories from the main broadcasters.</h4>
+                        <input type="text" class="fill-blank" id="news3a" placeholder="First" style="width: 200px; margin-right: 10px;">
+                        <span>and</span>
+                        <input type="text" class="fill-blank" id="news3b" placeholder="Second" style="width: 200px; margin-left: 10px;">
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>4. _____ does not usually pay its reporters.</h4>
+                        <input type="text" class="fill-blank" id="news4" placeholder="Company name" style="width: 300px;">
+                    </div>
+
+                    <button class="check-btn" onclick="checkNewsCompanies()">Check Answers</button>
+                    <div class="score-display" id="newsScore"></div>
+                </div>
+
+                <h3><span class="emoji">📖</span> Grammar: Relative Pronouns</h3>
+
+                <div class="info-box tip">
+                    <h4>Grammar Rules</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pronoun</th>
+                                <th>Use</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>who / that</strong></td>
+                                <td>for people</td>
+                                <td>The journalists <strong>who</strong> write are experienced.<br>A journalist is someone <strong>that</strong> writes reports.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>which / that</strong></td>
+                                <td>for things</td>
+                                <td>The site <strong>which</strong> has stories is popular.<br>OneWorld is a company <strong>that</strong> provides news.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem;"><strong>Note:</strong> We often use relative pronouns to make definitions.</p>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise 8: Make Definitions</h3>
+                <div class="info-box tip">
+                    <p>Match the beginnings with the endings and choose the correct relative pronoun.</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. A journalist is someone _____ writes stories for television and newspapers.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="rel1" value="who"> who/that
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="rel1" value="which"> which/that
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. OneWorld is a company _____ provides news about the developing world.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="rel2" value="who"> who/that
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="rel2" value="which"> which/that
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. Global is an adjective _____ means 'international' or 'all over the world'.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="rel3" value="who"> who/that
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="rel3" value="which"> which/that
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="check-btn" onclick="checkRelativePronouns()">Check Answers</button>
+                    <div class="score-display" id="relScore"></div>
+                </div>
+
+                <h3><span class="emoji">📝</span> Vocabulary: Nouns (person vs. subject/job)</h3>
+
+                <div class="vocab-grid">
+                    <div class="vocab-card" style="border-top-color: #4A90E2;">
+                        <h4>Person</h4>
+                        <p><strong>photographer</strong> - someone who takes photos</p>
+                        <p><strong>journalist</strong> - someone who writes news</p>
+                        <p><strong>scientist</strong> - someone who does science</p>
+                        <p><strong>politician</strong> - someone in politics</p>
+                        <p><strong>artist</strong> - someone who creates art</p>
+                        <p><strong>psychologist</strong> - someone who studies psychology</p>
+                    </div>
+                    <div class="vocab-card" style="border-top-color: #50C878;">
+                        <h4>Job/Subject</h4>
+                        <p><strong>photography</strong> - the art of taking photos</p>
+                        <p><strong>journalism</strong> - the job of writing news</p>
+                        <p><strong>science</strong> - the study of natural world</p>
+                        <p><strong>politics</strong> - the activity of government</p>
+                        <p><strong>art</strong> - creative activity</p>
+                        <p><strong>psychology</strong> - the study of the mind</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3.3: SCENARIO -->
+        <div class="section" id="scenario">
+            <div class="card">
+                <h2><span class="emoji">🎬</span> 3.3 SCENARIO: That's Entertainment!</h2>
+
+                <h3>Situation</h3>
+                <div class="info-box tip">
+                    <p>You work in the programme development department of a TV channel. Your task is to plan a new weekly television programme called <strong>"Fame and Fortune"</strong>.</p>
+                </div>
+
+                <h3>TV Programme Types</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>chat show <button class="speaker-btn" onclick="playAudio('chat_show')">🔊</button></h4>
+                        <div class="meaning">a show where a host interviews celebrities</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>current affairs programme <button class="speaker-btn" onclick="playAudio('current_affairs')">🔊</button></h4>
+                        <div class="meaning">a show about news and politics</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>documentary <button class="speaker-btn" onclick="playAudio('documentary2')">🔊</button></h4>
+                        <div class="meaning">a factual film about real events</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>drama <button class="speaker-btn" onclick="playAudio('drama2')">🔊</button></h4>
+                        <div class="meaning">a serious fictional TV series</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>game show <button class="speaker-btn" onclick="playAudio('game_show')">🔊</button></h4>
+                        <div class="meaning">a show with competitions and prizes</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>nature programme <button class="speaker-btn" onclick="playAudio('nature_programme')">🔊</button></h4>
+                        <div class="meaning">a show about animals and the environment</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>sitcom <button class="speaker-btn" onclick="playAudio('sitcom')">🔊</button></h4>
+                        <div class="meaning">situation comedy - a funny series</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>variety show <button class="speaker-btn" onclick="playAudio('variety_show')">🔊</button></h4>
+                        <div class="meaning">a show with different types of entertainment</div>
+                    </div>
+                </div>
+
+                <h3><span class="emoji">💬</span> Key Language: Making Suggestions</h3>
+
+                <div class="info-box success">
+                    <h4>Asking for Ideas:</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Any ideas?</li>
+                        <li>What else?</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">Making Suggestions:</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>Let's</strong> interview them about politics.</li>
+                        <li><strong>Why don't we</strong> get some politicians on the programme?</li>
+                        <li><strong>We should</strong> have a live band.</li>
+                        <li><strong>What about</strong> interviewing rich people?</li>
+                        <li><strong>Let's not</strong> do that.</li>
+                        <li><strong>We shouldn't</strong> include that.</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">Responding:</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Fine, but ...</li>
+                        <li>That's true.</li>
+                        <li>I agree, but ...</li>
+                        <li>Perhaps that's not a good idea.</li>
+                        <li>Exactly.</li>
+                        <li>Great idea.</li>
+                        <li>Really?</li>
+                        <li>No, I don't think we should do that.</li>
+                    </ul>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Exercise 5a: Complete the Suggestions</h3>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. _____ ideas?</h4>
+                        <select class="fill-blank" id="sug1">
+                            <option value="">Choose...</option>
+                            <option value="any">Any</option>
+                            <option value="let's">Let's</option>
+                            <option value="what">What</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. Why _____ we get some politicians on the programme?</h4>
+                        <select class="fill-blank" id="sug2">
+                            <option value="">Choose...</option>
+                            <option value="don't">don't</option>
+                            <option value="should">should</option>
+                            <option value="not">not</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. Let's _____ interview them about politics.</h4>
+                        <select class="fill-blank" id="sug3">
+                            <option value="">Choose...</option>
+                            <option value="not">not</option>
+                            <option value="shall">shall</option>
+                            <option value="don't">don't</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>4. _____ ask them about their lives.</h4>
+                        <select class="fill-blank" id="sug4">
+                            <option value="">Choose...</option>
+                            <option value="let's">Let's</option>
+                            <option value="any">Any</option>
+                            <option value="what">What</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>5. _____ else?</h4>
+                        <select class="fill-blank" id="sug5">
+                            <option value="">Choose...</option>
+                            <option value="what">What</option>
+                            <option value="let's">Let's</option>
+                            <option value="should">Should</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>6. We _____ have a live band on the programme.</h4>
+                        <select class="fill-blank" id="sug6">
+                            <option value="">Choose...</option>
+                            <option value="should">should</option>
+                            <option value="not">not</option>
+                            <option value="any">any</option>
+                        </select>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>7. What _____ interviewing rich people?</h4>
+                        <select class="fill-blank" id="sug7">
+                            <option value="">Choose...</option>
+                            <option value="about">about</option>
+                            <option value="shall">shall</option>
+                            <option value="let's">let's</option>
+                        </select>
+                    </div>
+
+                    <button class="check-btn" onclick="checkSuggestions()">Check Answers</button>
+                    <div class="score-display" id="sugScore"></div>
+                </div>
+
+                <h3><span class="emoji">🎯</span> Task: Plan Your TV Programme</h3>
+                <div class="info-box warning">
+                    <p><strong>Instructions:</strong> Design a weekly television programme. Consider:</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Target audience (teenagers, young adults, elderly people, etc.)</li>
+                        <li>Day and time for broadcast</li>
+                        <li>Programme content and topics</li>
+                        <li>Number of presenters</li>
+                        <li>Name of the programme</li>
+                    </ul>
+                </div>
+
+                <textarea id="programmeplan" placeholder="Write your TV programme plan here... Include the target audience, broadcast time, content ideas, and programme name." style="width: 100%; min-height: 200px; padding: 1rem; border: 2px solid var(--primary-color); border-radius: 8px; font-family: inherit; font-size: 1rem; margin-top: 1rem;"></textarea>
+
+                <button class="submit-btn" onclick="saveProgrammePlan()" style="margin-top: 1rem;">Save Programme Plan</button>
+                <div class="score-display" id="planMessage"></div>
+            </div>
+        </div>
+
+        <!-- Section 3.4: STUDY SKILLS & WRITING -->
+        <div class="section" id="study">
+            <div class="card">
+                <h2><span class="emoji">📚</span> 3.4 STUDY AND WRITING SKILLS</h2>
+
+                <h3>Study Skills: Working with Others</h3>
+
+                <div class="info-box tip">
+                    <h4>Advantages of Working in Pairs/Groups:</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>✅ Increases the amount of time each student can talk</li>
+                        <li>✅ Helps students become more confident</li>
+                        <li>✅ Encourages students to become more independent learners</li>
+                        <li>✅ Provides variety and energy in the lesson</li>
+                        <li>✅ You can learn interesting things from other students</li>
+                        <li>✅ Gives the teacher the chance to see how everybody is communicating</li>
+                    </ul>
+                </div>
+
+                <h3><span class="emoji">💬</span> Useful Phrases for Group Work</h3>
+
+                <div class="vocab-grid">
+                    <div class="vocab-card" style="border-top-color: #4A90E2;">
+                        <h4>Asking for opinions</h4>
+                        <p>What do you think about ...?</p>
+                    </div>
+                    <div class="vocab-card" style="border-top-color: #50C878;">
+                        <h4>Checking understanding</h4>
+                        <p>I think I agree with you, basically.</p>
+                    </div>
+                    <div class="vocab-card" style="border-top-color: #FF6B6B;">
+                        <h4>Asking for clarification</h4>
+                        <p>Sorry, I don't really understand. What do you mean, exactly?</p>
+                    </div>
+                    <div class="vocab-card" style="border-top-color: #9B59B6;">
+                        <h4>Agreeing</h4>
+                        <p>You're right, actually.<br>Absolutely. / Exactly.</p>
+                    </div>
+                    <div class="vocab-card" style="border-top-color: #F39C12;">
+                        <h4>Disagreeing (politely)</h4>
+                        <p>I'm not sure I agree with you.<br>Yes, but ...</p>
+                    </div>
+                    <div class="vocab-card" style="border-top-color: #1ABC9C;">
+                        <h4>Showing interest</h4>
+                        <p>That's an interesting point.<br>Are you saying that ...?</p>
+                    </div>
+                </div>
+
+                <h3><span class="emoji">📝</span> Writing Skills: A TV Programme Review</h3>
+
+                <div class="info-box success">
+                    <h4>What to include in a TV/Film Review:</h4>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>An interesting beginning</li>
+                        <li>A summary of the story</li>
+                        <li>Details of the main character(s)</li>
+                        <li>A description of the place(s) and time</li>
+                        <li>A strong ending where you recommend (or don't recommend) the programme</li>
+                        <li>Comments on the actors' performances</li>
+                    </ol>
+
+                    <p style="margin-top: 1rem;"><strong>⚠️ Common mistake:</strong> Don't write too much about the story and too little about your opinions!</p>
+                </div>
+
+                <h3>Example Review: Life on Mars <button class="speaker-btn" onclick="playAllLifeOnMars()" style="font-size: 1.2rem;">🔊 Play All</button></h3>
+                <div class="reading-text" style="background-color: #f8f9fa; padding: 1.5rem;">
+                    <h4 style="color: var(--primary-color);">LIFE ON MARS</h4>
+
+                    <p><button class="speaker-btn" onclick="playAudio('life_on_mars_intro')">🔊</button> <strong>The fashion and culture of the 1970s are very popular today, but <em>Life on Mars</em>, a new police series, reminds us what life was really like then.</strong></p>
+
+                    <p><button class="speaker-btn" onclick="playAudio('life_on_mars_story')">🔊</button> The story is simple. In Manchester, 2006, a car knocks down Detective Chief Inspector Sam Tyler (John Simm) while he is looking for a killer. He wakes up in 1973. He is still a police officer in Manchester and he is still looking for the same killer. However, the collar of his shirt is a lot bigger and there aren't any computers in the police station.</p>
+
+                    <p><button class="speaker-btn" onclick="playAudio('life_on_mars_review')">🔊</button> <em>Life on Mars</em> is an exciting police drama that is part thriller, part comedy. Simm gives a convincing performance as a man who is in shock, and writer Matthew Graham makes sure that there is also plenty of enjoyable comedy.</p>
+                </div>
+
+                <h3><span class="emoji">✏️</span> Write Your Own Review</h3>
+                <div class="info-box warning">
+                    <p><strong>Task:</strong> Write a review for a student newspaper of a TV programme or series you saw recently.</p>
+                    <p>Remember to include: an interesting beginning, story summary, character details, your opinions, and a strong ending!</p>
+                </div>
+
+                <textarea id="tvreview" placeholder="Write your TV programme review here..." style="width: 100%; min-height: 250px; padding: 1rem; border: 2px solid var(--accent-color); border-radius: 8px; font-family: inherit; font-size: 1rem; margin-top: 1rem;"></textarea>
+
+                <button class="submit-btn" onclick="saveReview()" style="margin-top: 1rem;">Save Review</button>
+                <div class="score-display" id="reviewMessage"></div>
+            </div>
+        </div>
+
+        <!-- Section: GRAMMAR SUMMARY -->
+        <div class="section" id="grammar">
+            <div class="card">
+                <h2><span class="emoji">📖</span> Grammar Summary</h2>
+
+                <h3>Articles (a/an, the, no article)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Article</th>
+                            <th>When to Use</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>a / an</strong></td>
+                            <td>
+                                • With singular countable nouns<br>
+                                • First time mentioning<br>
+                                • Talking about jobs
+                            </td>
+                            <td>
+                                I saw <strong>a</strong> film.<br>
+                                She's <strong>an</strong> artist.<br>
+                                There's <strong>a</strong> journalist here.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>the</strong></td>
+                            <td>
+                                • Particular/specific thing<br>
+                                • Second mention<br>
+                                • When listener knows which one
+                            </td>
+                            <td>
+                                <strong>The</strong> film was great.<br>
+                                <strong>The</strong> article is interesting.<br>
+                                <strong>The</strong> man loves her.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>no article</strong></td>
+                            <td>
+                                • Plural nouns (general)<br>
+                                • Talking about things in general
+                            </td>
+                            <td>
+                                Newspapers are boring.<br>
+                                Journalists write articles.<br>
+                                I like comedies.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top: 2rem;">Relative Pronouns (who, which, that)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pronoun</th>
+                            <th>Use For</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>who / that</strong></td>
+                            <td>People</td>
+                            <td>
+                                A journalist is someone <strong>who</strong> writes reports.<br>
+                                The writers <strong>that</strong> produce journalism are experienced.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>which / that</strong></td>
+                            <td>Things</td>
+                            <td>
+                                OneWorld is a site <strong>which</strong> has stories.<br>
+                                The channels <strong>that</strong> offer news are popular.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box tip" style="margin-top: 2rem;">
+                    <h4>💡 Remember:</h4>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>that</strong> can be used for both people and things</li>
+                        <li>Relative pronouns help us join two pieces of information</li>
+                        <li>We often use them to make definitions</li>
+                    </ul>
+                </div>
+
+                <h3 style="margin-top: 2rem;"><span class="emoji">✏️</span> Grammar Practice</h3>
+
+                <div class="quiz-container">
+                    <h4>Complete with a, an, the, or ✗ (no article):</h4>
+
+                    <div class="quiz-question">
+                        <p>1. I read <input type="text" class="fill-blank" id="gp1" style="width: 80px;"> interesting article in <input type="text" class="fill-blank" id="gp2" style="width: 80px;"> newspaper yesterday.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. She's <input type="text" class="fill-blank" id="gp3" style="width: 80px;"> journalist. She works for <input type="text" class="fill-blank" id="gp4" style="width: 80px;"> BBC.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. <input type="text" class="fill-blank" id="gp5" style="width: 80px;"> documentaries are my favourite programmes.</p>
+                    </div>
+
+                    <h4 style="margin-top: 2rem;">Complete with who, which, or that:</h4>
+
+                    <div class="quiz-question">
+                        <p>4. A presenter is someone <input type="text" class="fill-blank" id="gp6" style="width: 100px;"> introduces TV shows.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>5. CNN is a channel <input type="text" class="fill-blank" id="gp7" style="width: 100px;"> broadcasts news worldwide.</p>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>6. The people <input type="text" class="fill-blank" id="gp8" style="width: 100px;"> write for OneWorld are often local.</p>
+                    </div>
+
+                    <button class="check-btn" onclick="checkGrammarPractice()">Check Answers</button>
+                    <div class="score-display" id="grammarScore"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: VOCABULARY -->
+        <div class="section" id="vocab">
+            <div class="card">
+                <h2><span class="emoji">📝</span> Vocabulary Bank</h2>
+
+                <h3>The Media</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>newspaper <button class="speaker-btn" onclick="playAudio('newspaper')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">daily or weekly publication with news</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>magazine <button class="speaker-btn" onclick="playAudio('magazine')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">periodic publication with articles and photos</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>radio <button class="speaker-btn" onclick="playAudio('radio')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">audio broadcasting medium</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>television <button class="speaker-btn" onclick="playAudio('television')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">broadcast medium for moving pictures</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>the Internet <button class="speaker-btn" onclick="playAudio('internet')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">global computer network</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>channel <button class="speaker-btn" onclick="playAudio('channel')">🔊</button></h4>
+                        <div class="type">noun</div>
+                        <div class="meaning">a TV or radio station</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">TV Programme Types</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>news <button class="speaker-btn" onclick="playAudio('news')">🔊</button></h4>
+                        <div class="meaning">current events programme</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>soap opera <button class="speaker-btn" onclick="playAudio('soap_opera2')">🔊</button></h4>
+                        <div class="meaning">continuing drama series</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>drama <button class="speaker-btn" onclick="playAudio('drama3')">🔊</button></h4>
+                        <div class="meaning">serious fictional series</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>comedy <button class="speaker-btn" onclick="playAudio('comedy2')">🔊</button></h4>
+                        <div class="meaning">funny programme</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>documentary <button class="speaker-btn" onclick="playAudio('documentary3')">🔊</button></h4>
+                        <div class="meaning">factual film</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>reality show <button class="speaker-btn" onclick="playAudio('reality_show')">🔊</button></h4>
+                        <div class="meaning">programme about real people</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Media People</h3>
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <h4>journalist <button class="speaker-btn" onclick="playAudio('journalist2')">🔊</button></h4>
+                        <div class="meaning">person who writes news</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>reporter <button class="speaker-btn" onclick="playAudio('reporter')">🔊</button></h4>
+                        <div class="meaning">person who reports news</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>presenter <button class="speaker-btn" onclick="playAudio('presenter2')">🔊</button></h4>
+                        <div class="meaning">person who hosts a show</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>producer <button class="speaker-btn" onclick="playAudio('producer2')">🔊</button></h4>
+                        <div class="meaning">person who makes programmes</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>photographer <button class="speaker-btn" onclick="playAudio('photographer')">🔊</button></h4>
+                        <div class="meaning">person who takes photos</div>
+                    </div>
+                    <div class="vocab-card">
+                        <h4>editor <button class="speaker-btn" onclick="playAudio('editor')">🔊</button></h4>
+                        <div class="meaning">person who edits content</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: FINAL QUIZ -->
+        <div class="section" id="quiz">
+            <div class="card">
+                <h2><span class="emoji">✅</span> Final Quiz</h2>
+                <p>Test your knowledge of Unit 3: The Media</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <h4>1. Which article do we use with singular nouns when mentioning something for the first time?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq1" value="a"> a/an
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq1" value="b"> the
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq1" value="c"> no article
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. Complete: "She's _____ journalist."</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq2" value="a"> a
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq2" value="b"> an
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq2" value="c"> the
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. Which relative pronoun do we use for people?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq3" value="a"> who/that
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq3" value="b"> which/that
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq3" value="c"> what/that
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>4. A _____ is someone who writes reports for newspapers or TV.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq4" value="a"> journalism
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq4" value="b"> journalist
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq4" value="c"> journalistic
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>5. Which is NOT a news company mentioned in the text?</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq5" value="a"> BBC World
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq5" value="b"> Al Jazeera
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq5" value="c"> Fox News
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>6. Complete the suggestion: "_____ interview some celebrities?"</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq6" value="a"> Why don't we
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq6" value="b"> We should not
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq6" value="c"> Let's not
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>7. A soap opera is:</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq7" value="a"> a continuing TV story about people's lives
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq7" value="b"> a factual documentary
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq7" value="c"> a news programme
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>8. Complete: "_____ newspapers are boring." (general statement)</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq8" value="a"> (no article)
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq8" value="b"> The
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq8" value="c"> A
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>9. OneWorld is a website _____ has stories about the developing world.</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq9" value="a"> which
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq9" value="b"> who
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq9" value="c"> what
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>10. In a TV review, you should NOT:</h4>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="fq10" value="a"> write too much about the story and too little about opinions
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq10" value="b"> include your opinions
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="fq10" value="c"> have an interesting beginning
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="check-btn" onclick="checkFinalQuiz()">Check Answers</button>
+                    <div class="score-display" id="finalScore"></div>
+                </div>
+
+                <div id="congratsMessage" style="display: none; margin-top: 2rem;">
+                    <div class="info-box success">
+                        <h3>🎉 Congratulations!</h3>
+                        <p>You've completed Unit 3: The Media! You now understand articles, relative pronouns, and can talk about different types of media.</p>
+                        <p><strong>Keep up the excellent work!</strong> 📺🌍📱</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="prev-btn" onclick="previousSection()">← Previous</button>
+            <button class="next-btn" onclick="nextSection()">Next →</button>
+        </div>
+    </div>
+
+    <script src="lesson.js"></script>
+    <script>
+        const sections = ['intro', 'mymedia', 'worldnews', 'scenario', 'study', 'grammar', 'vocab', 'quiz'];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            LessonFramework.init(sections);
+        });
+
+        // Exercise: Callum Quiz (3b)
+        function checkCallumQuiz() {
+            const answers = {
+                callum1: 'true',   // Doesn't buy newspaper every day
+                callum2: 'true',   // Gets free newspapers
+                callum3: 'true',   // Computer magazines
+                callum4: 'true',   // Variety of TV programmes
+                callum5: 'true',   // Radio when doing other things
+                callum6: 'false',  // NOT only for business
+                callum7: 'true'    // Physical feeling important
+            };
+            LessonFramework.checkMultipleChoice(answers, 'callumScore');
+        }
+
+        // Exercise: Articles (5b)
+        function checkArticles() {
+            const answers = {
+                art1: 'a',
+                art2: 'the',
+                art3: ['an', 'a'],
+                art4: 'a',
+                art5: 'the',
+                art6: 'an',
+                art7: 'the',
+                art8: 'the',
+                art9: 'the',
+                art10: 'a',
+                art11: 'the',
+                art12: 'the',
+                art13: 'the',
+                art14: 'the'
+            };
+            LessonFramework.checkFillInBlanks(answers, 'articlesScore');
+        }
+
+        // Exercise: News Companies (3a)
+        function checkNewsCompanies() {
+            const answers = {
+                news1a: ['bbc world', 'bbc', 'bbc world'],
+                news1b: 'cnn',
+                news2a: ['oneworld', 'allafrica.com', 'wnn.com'],
+                news2b: ['oneworld', 'allafrica.com', 'wnn.com'],
+                news2c: ['oneworld', 'allafrica.com', 'wnn.com'],
+                news3a: ['al jazeera', 'al jazeera international'],
+                news3b: 'oneworld',
+                news4: 'oneworld'
+            };
+            LessonFramework.checkFillInBlanks(answers, 'newsScore');
+        }
+
+        // Exercise: Relative Pronouns (8)
+        function checkRelativePronouns() {
+            const answers = {
+                rel1: 'who',   // journalist (person)
+                rel2: 'which', // company (thing)
+                rel3: 'which'  // adjective (thing)
+            };
+            LessonFramework.checkMultipleChoice(answers, 'relScore');
+        }
+
+        // Exercise: Suggestions (5a)
+        function checkSuggestions() {
+            const answers = {
+                sug1: 'any',
+                sug2: 'don\'t',
+                sug3: 'not',
+                sug4: 'let\'s',
+                sug5: 'what',
+                sug6: 'should',
+                sug7: 'about'
+            };
+            LessonFramework.checkDropdowns(answers, 'sugScore');
+        }
+
+        // Task: Save Programme Plan
+        function saveProgrammePlan() {
+            LessonFramework.saveTextarea('programmeplan', 'planMessage', 50, 'Your TV programme plan has been saved! Great ideas! 🎬');
+        }
+
+        // Task: Save Review
+        function saveReview() {
+            LessonFramework.saveTextarea('tvreview', 'reviewMessage', 100, 'Your TV review has been saved! Well done! 📝');
+        }
+
+        // Exercise: Grammar Practice
+        function checkGrammarPractice() {
+            const answers = {
+                gp1: 'an',
+                gp2: ['the', 'a'],
+                gp3: 'a',
+                gp4: 'the',
+                gp5: ['✗', 'x', '-', ''],
+                gp6: ['who', 'that'],
+                gp7: ['which', 'that'],
+                gp8: ['who', 'that']
+            };
+            LessonFramework.checkFillInBlanks(answers, 'grammarScore');
+        }
+
+        // Final Quiz
+        function checkFinalQuiz() {
+            const answers = {
+                fq1: 'a',  // a/an for first mention
+                fq2: 'a',  // a journalist
+                fq3: 'a',  // who/that for people
+                fq4: 'b',  // journalist (person)
+                fq5: 'c',  // Fox News not mentioned
+                fq6: 'a',  // Why don't we
+                fq7: 'a',  // soap opera definition
+                fq8: 'a',  // no article for general
+                fq9: 'a',  // which for things
+                fq10: 'a'  // don't write too much about story
+            };
+            const result = LessonFramework.checkMultipleChoice(answers, 'finalScore');
+
+            if (result && result.percentage === 100) {
+                document.getElementById('congratsMessage').style.display = 'block';
+            }
+        }
+
+        // Play All functions for reading texts
+        async function playAllWorldNews() {
+            const paragraphs = ['world_news_para1', 'world_news_para2', 'world_news_para3', 'world_news_para4', 'world_news_para5'];
+            for (const para of paragraphs) {
+                await playAudioAndWait(para);
+            }
+        }
+
+        async function playAllLifeOnMars() {
+            const paragraphs = ['life_on_mars_intro', 'life_on_mars_story', 'life_on_mars_review'];
+            for (const para of paragraphs) {
+                await playAudioAndWait(para);
+            }
+        }
+
+        function playAudioAndWait(filename) {
+            return new Promise((resolve) => {
+                const audio = new Audio(`audio/${filename}.mp3`);
+                audio.onended = resolve;
+                audio.onerror = resolve;
+                audio.play();
+            });
+        }
+
+        // Navigation functions
+        function nextSection() {
+            LessonFramework.nextSection();
+        }
+
+        function previousSection() {
+            LessonFramework.previousSection();
+        }
+
+        function playAudio(filename) {
+            LessonFramework.playAudio(filename);
+        }
+    </script>
+</body>
+</html>
